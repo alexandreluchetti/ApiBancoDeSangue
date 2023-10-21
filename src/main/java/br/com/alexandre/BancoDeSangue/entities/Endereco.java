@@ -1,10 +1,6 @@
 package br.com.alexandre.BancoDeSangue.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
-@Getter
-@AllArgsConstructor
 public class Endereco {
 
     private String cep;
@@ -14,6 +10,15 @@ public class Endereco {
     private String cidade;
     private String estado;
 
+    public Endereco(String cep, String endereco, Integer numero, String bairro, String cidade, String estado) {
+        this.cep = cep;
+        this.endereco = endereco;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+    }
+
     public Endereco() {
         this.cep = "";
         this.endereco = "";
@@ -21,5 +26,34 @@ public class Endereco {
         this.bairro = "";
         this.cidade = "";
         this.estado = "";
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Endereco {cep=" + cep + ", endereco=" + endereco + ", numero=" + numero + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + "}";
     }
 }

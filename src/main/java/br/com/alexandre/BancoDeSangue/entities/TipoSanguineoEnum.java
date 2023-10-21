@@ -1,5 +1,7 @@
 package br.com.alexandre.BancoDeSangue.entities;
 
+import java.util.Arrays;
+
 public enum TipoSanguineoEnum {
 
     A_POSITIVO("A+"),
@@ -20,6 +22,14 @@ public enum TipoSanguineoEnum {
 
     public String getValue() {
         return value;
+    }
+
+    public static TipoSanguineoEnum getEnum(String value) {
+        for (TipoSanguineoEnum tsEnum : values()) {
+            if (value.toUpperCase().contains(tsEnum.value))
+                return tsEnum;
+        }
+        return VAZIO;
     }
 
 }
