@@ -8,11 +8,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class PessoaService {
 
     private PessoaRepository pessoaRepository;
+
+    private static List<Pessoa> pessoasStatic;
 
     @Autowired
     public PessoaService(PessoaRepository pessoaRepository) {
@@ -23,13 +26,22 @@ public class PessoaService {
         pessoaRepository.registrarPessoa(pessoa);
     }
 
-    public List<PessoaDto> buscaPessoa(String cpf) {
-        List<Pessoa> pessoas = pessoaRepository.buscaPessoas(cpf);
+    public List<Pessoa> buscaPessoa(String cpf) {
+        pessoasStatic = pessoaRepository.buscaPessoas(cpf);
+        return pessoasStatic;
+    }
+
+    public List<PessoaDto> buscaPessoaDto(String cpf) {
+        List<Pessoa> pessoas = (pessoasStatic.isEmpty()) ? buscaPessoa(cpf) : pessoasStatic;
         List<PessoaDto> pessoaDtos = new ArrayList<>();
         pessoas.forEach( pessoa -> {
             pessoaDtos.add(pessoa.toDto());
         });
         return pessoaDtos;
+    }
+
+    public Map<String, Integer> candidatosPorEstado() {
+        List<Pessoa> pessoas = (pessoasStatic.isEmpty()) ? buscaPessoa("") : pessoasStatic;
     }
 
 }
