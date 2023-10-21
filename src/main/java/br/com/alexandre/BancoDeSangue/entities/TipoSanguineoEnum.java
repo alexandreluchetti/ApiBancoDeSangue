@@ -1,6 +1,8 @@
 package br.com.alexandre.BancoDeSangue.entities;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public enum TipoSanguineoEnum {
 
@@ -13,6 +15,9 @@ public enum TipoSanguineoEnum {
     O_POSITIVO("O+"),
     O_NEGATIVO("O-"),
     VAZIO("VAZIO");
+
+    public static final List<TipoSanguineoEnum> tipos = List.of(
+            A_POSITIVO, A_NEGATIVO, B_POSITIVO, B_NEGATIVO, AB_POSITIVO, AB_NEGATIVO, O_POSITIVO, O_NEGATIVO);
 
     private String value;
 

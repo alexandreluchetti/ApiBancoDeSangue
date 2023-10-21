@@ -7,6 +7,7 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Pessoa {
     
@@ -76,7 +77,7 @@ public class Pessoa {
         SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         try {
-            java.util.Date utilDate = inputFormat.parse(dataNascimento); // Converte a string para java.util.Date
+            java.util.Date utilDate = outputFormat.parse(dataNascimento); // Converte a string para java.util.Date
             String formattedDate = outputFormat.format(utilDate); // Formata a data no formato "yyyy-MM-dd"
             return Date.valueOf(formattedDate);
         } catch (ParseException exception) {
@@ -123,6 +124,17 @@ public class Pessoa {
 
     public TipoSanguineoEnum getTipoSanguineo() {
         return tipoSanguineo;
+    }
+
+    public Integer getIdade() {
+        LocalDate dataAtual = LocalDate.now();
+        LocalDate dataDeNascimento = getFormatedDate().toLocalDate();
+        Period periodo = Period.between(dataDeNascimento, dataAtual);
+        return periodo.getYears();
+    }
+
+    public Double getImc() {
+        return (this.peso / (this.altura * this.altura));
     }
 
     public PessoaDto toDto() {

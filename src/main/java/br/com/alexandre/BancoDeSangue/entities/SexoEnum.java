@@ -27,7 +27,8 @@ public enum SexoEnum {
 
     public static SexoEnum getEnum(String value) {
         for (SexoEnum sexoEnum : values()) {
-            if (value.toUpperCase().contains(sexoEnum.value))
+            if (value.toUpperCase().contains(sexoEnum.value) ||
+            value.toUpperCase().contains(sexoEnum.valueChar))
                 return sexoEnum;
         }
         return VAZIO;
