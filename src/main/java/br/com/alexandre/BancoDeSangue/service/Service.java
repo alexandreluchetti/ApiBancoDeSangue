@@ -1,7 +1,6 @@
 package br.com.alexandre.BancoDeSangue.service;
 
 import br.com.alexandre.BancoDeSangue.controller.dto.PessoaDto;
-import br.com.alexandre.BancoDeSangue.entities.ImcPorDecada;
 import br.com.alexandre.BancoDeSangue.entities.Pessoa;
 import br.com.alexandre.BancoDeSangue.entities.TipoSanguineoEnum;
 import br.com.alexandre.BancoDeSangue.repositories.PessoaRepository;
@@ -19,18 +18,8 @@ import static br.com.alexandre.BancoDeSangue.entities.SexoEnum.MASCULINO;
 
 @org.springframework.stereotype.Service
 public class Service {
-
-    private static final String ZERO_10 = "0 a 10";
-     private static final String ONZE_20 = "11 a 20";
-     private static final String VINTE1_30 = "21 a 30";
-     private static final String TRINTA1_40 = "31 a 40";
-     private static final String QUARENTA1_50 = "41 a 50";
-     private static final String CINQUENTA1_60 = "51 a 60";
-     private static final String SECENTA1_70 = "61 a 70";
-     private static final String SETENTA1_80 = "71 a 80";
-     private static final String OITENTA1_90 = "81 a 90";
-     private static final String NOVENTA1_100 = "91 a 100";
      private static final Integer IMC_30 = 30;
+     private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.##");
 
     private static List<Pessoa> pessoasStatic = new ArrayList<>();
 
@@ -46,11 +35,11 @@ public class Service {
     }
 
     public List<Pessoa> buscaPessoas(String cpf) {
-        List<Pessoa> pessoas = (pessoasStatic.isEmpty())
-                ? pessoaRepository.buscaPessoas(cpf)
-                : pessoasStatic;
+        pessoasStatic = (pessoasStatic.size() > 0)
+                ? pessoasStatic
+                : pessoaRepository.buscaPessoas(cpf);
 
-        return pessoas;
+        return pessoasStatic;
     }
 
     public List<PessoaDto> buscaPessoaDto(String cpf) {
@@ -136,6 +125,60 @@ public class Service {
         return quantidadeDeReceptoresPorTipoSanguineoDoador;
     }
 
+    public Map<String, Double> imcMedioPorDecada() {
+        List<Pessoa> pessoas = buscaPessoas("");
+        Map<String, Double> imcMedioPorDecada = getImcMedio(pessoas);
+        return imcMedioPorDecada;
+    }
+
+    private Map<String, Double> getImcMedio(List<Pessoa> pessoas) {
+        Map<String, Double> imcMedioPorDecada = getNomeDecadas(pessoas);
+        Map<String, Double> map = new HashMap<>();
+        for (String nomeDecada : imcMedioPorDecada.keySet()) {
+            double imc = 0;
+            int quantidade = 0;
+            String[] numerosDecada = nomeDecada.split("a");
+            Integer inicioDecada = Integer.parseInt(numerosDecada[0].trim());
+            Integer fimDecada = Integer.parseInt(numerosDecada[1].trim());
+
+            for (Pessoa pessoa : pessoas) {
+                int idade = pessoa.getIdade();
+                if (idade >= inicioDecada && idade <= fimDecada) {
+                    imc += pessoa.getImc();
+                    quantidade++;
+                }
+            }
+
+            Double imcMedio = imc / quantidade;
+            map.put(nomeDecada, formatDouble(imcMedio));
+        }
+
+        return map;
+    }
+
+    private Map<String, Double> getNomeDecadas(List<Pessoa> pessoas) {
+        Map<String, Double> nomeDecadas = new HashMap<>();
+        for (Pessoa pessoa : pessoas) {
+            int idade = pessoa.getIdade();
+            char[] charArray = String.valueOf(idade).toCharArray();
+
+            String nomeDecada = "";
+            int primeiroNumero = Integer.parseInt(String.valueOf(charArray[0]));
+            int segundoNumero;
+            if (String.valueOf(charArray[1]).equals("0")) {
+                segundoNumero = primeiroNumero * 10;
+                primeiroNumero = segundoNumero - 9;
+            } else {
+                primeiroNumero = (primeiroNumero * 10) + 1;
+                segundoNumero = primeiroNumero + 9;
+            }
+
+            nomeDecada = primeiroNumero + " a " + segundoNumero;
+            nomeDecadas.put(nomeDecada, 0.0);
+        }
+        return nomeDecadas;
+    }
+
     private Integer getQuantidadeDoadoresTipoSanguineo(List<Pessoa> pessoas, List<TipoSanguineoEnum> tipos) {
         int quantidade = 0;
         for (TipoSanguineoEnum tipoSanguineo : tipos) {
@@ -167,45 +210,12 @@ public class Service {
         });
 
         Double media = ((double) (obesos.get() * 100) / pessoas.size());
-        DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        String doubleFormatado = decimalFormat.format(media).replace(",", ".");
-        return Double.parseDouble(doubleFormatado);
+        return formatDouble(media);
     }
 
-//    public Map<String, Double> imcMedioPorDezenaDeIdade() {
-//        List<Pessoa> pessoas = buscaPessoas("");
-//        Map<String, Double> decadas = new HashMap<>();
-//        List<ImcPorDecada> imcPorDecadaList = new ArrayList<>();
-//
-//        for (Pessoa pessoa : pessoas) {
-//            int idade = pessoa.getIdade();
-//            double imc = (pessoa.getPeso() / (pessoa.getAltura() * pessoa.getAltura()));
-//            String keyDezenas = getDezenas(idade);
-//            double imcJaRegistrado = decadas.get(keyDezenas);
-//            decadas.put(keyDezenas, imc + imcJaRegistrado);
-//        }
-//
-//        for (String decada : decadas.keySet()) {
-//            double imcTotal = decadas.get(decada);
-//            double mediaImc = imcTotal;
-//        }
-//
-//        return decadas;
-//    }
-//
-//    private String getDezenas(int idade) {
-//        String key = "";
-//        if (idade < 10) key = ZERO_10;
-//        if (idade > 10 && idade < 20) key = ONZE_20;
-//        if (idade > 20 && idade < 30) key = VINTE1_30;
-//        if (idade > 30 && idade < 40) key = TRINTA1_40;
-//        if (idade > 40 && idade < 50) key = QUARENTA1_50;
-//        if (idade > 50 && idade < 60) key = CINQUENTA1_60;
-//        if (idade > 60 && idade < 70) key = SECENTA1_70;
-//        if (idade > 70 && idade < 80) key = SETENTA1_80;
-//        if (idade > 80 && idade < 90) key = OITENTA1_90;
-//        if (idade > 90) key = NOVENTA1_100;
-//        return key;
-//    }
+    private Double formatDouble(Double value) {
+        String stringValue = DECIMAL_FORMAT.format(value).replace(",", ".");
+        return Double.parseDouble(stringValue);
+    }
 
 }

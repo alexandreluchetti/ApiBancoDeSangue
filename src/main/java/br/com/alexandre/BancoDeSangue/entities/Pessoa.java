@@ -73,7 +73,6 @@ public class Pessoa {
     }
 
     public Date getFormatedDate() {
-        SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy");
         SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         try {

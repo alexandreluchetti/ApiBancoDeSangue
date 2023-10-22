@@ -65,4 +65,10 @@ public class Controller {
         return service.quantidadeReceptoresParaCadaTipoSanguineoDoador();
     }
 
+    @GetMapping(path = "/media/imc/decada")
+    @Operation(summary = "Operacao para buscar a media de IMC por cada decada")
+    public Map<String, Double> imcMedioPorDecada() {
+        return service.imcMedioPorDecada();
+    }
+
 }
