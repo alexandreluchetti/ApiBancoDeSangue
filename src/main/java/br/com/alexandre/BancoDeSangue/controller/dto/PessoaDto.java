@@ -6,11 +6,10 @@ import br.com.alexandre.BancoDeSangue.entities.SexoEnum;
 import br.com.alexandre.BancoDeSangue.entities.TipoSanguineoEnum;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 
-import java.util.Arrays;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public record PessoaDto(
 
@@ -22,7 +21,7 @@ public record PessoaDto(
         String rg,
         @JsonAlias({"data_nasc"})
         @Schema(example = "10/07/1992", required = true)
-        String dataNascimento, //data_nasc
+        String dataNascimento,
         @Schema(example = "Masculino", required = true)
         String sexo,
         @Schema(example = "Bia Bala", required = true)
@@ -62,7 +61,20 @@ public record PessoaDto(
                 SexoEnum sexoEnum = SexoEnum.getEnum(sexo);
                 TipoSanguineoEnum tipoSanguineoEnum = TipoSanguineoEnum.getEnum(tipoSanguineo);
                 Endereco enderecoObj = new Endereco(cep, endereco, numero, bairro, cidade, estado);
-                return new Pessoa(nome, cpf, rg, dataNascimento, sexoEnum, mae, pai, email, enderecoObj, telefoneFixo, celular, altura, peso, tipoSanguineoEnum);
+                return new Pessoa(nome, cpf, rg, getFormatedDate(), sexoEnum, mae, pai, email, enderecoObj, telefoneFixo, celular, altura, peso, tipoSanguineoEnum);
+        }
+
+        public String getFormatedDate() {
+                SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
+                String formattedDate = "";
+                try {
+                        Date date = inputFormat.parse(dataNascimento);
+                        formattedDate = outputFormat.format(date);
+                } catch (ParseException exception) {
+                        System.out.println(exception.getMessage());
+                }
+                return formattedDate;
         }
 
 }
