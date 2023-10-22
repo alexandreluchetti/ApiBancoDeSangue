@@ -20,6 +20,16 @@ mvn wrapper:wrapper
 (ApiBancoDeSangue/src/main/resources/application.yml)
 ```
 
+## Layout web
+<img src="/assets/Screenshot from 2023-10-22 11-16-27.png">
+<img src="/assets/Screenshot from 2023-10-22 11-17-15.png">
+<img src="/assets/Screenshot from 2023-10-22 11-17-39.png">
+<img src="/assets/Screenshot from 2023-10-22 11-17-58.png">
+<img src="/assets/Screenshot from 2023-10-22 11-18-25.png">
+<img src="/assets/Screenshot from 2023-10-22 11-18-44.png">
+<img src="/assets/Screenshot from 2023-10-22 11-24-15.png">
+<img src="/assets/Screenshot from 2023-10-22 11-24-35.png">
+
 ## Autor
 Alexandre Luchetti
 
