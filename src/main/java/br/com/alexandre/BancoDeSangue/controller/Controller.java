@@ -53,4 +53,16 @@ public class Controller {
         return service.mediaIdadePorTipoSanguineo();
     }
 
+    @GetMapping(path = "/quantidade/doadores/tiposanguineo/receptor")
+    @Operation(summary = "Operacao para buscar a quantidade de doadores para cada tipo sanguineo receptor")
+    public Map<String, Integer> quantidadeDoadoresParaCadaTipoSanguineoReceptor() {
+        return service.quantidadeDoadoresParaCadaTipoSanguineoReceptor();
+    }
+
+    @GetMapping(path = "/quantidade/receptores/tiposanguineo/doador")
+    @Operation(summary = "Operacao para buscar a quantidade de receptores para cada tipo sanguineo doador")
+    public Map<String, Integer> quantidadeReceptoresParaCadaTipoSanguineoDoador() {
+        return service.quantidadeReceptoresParaCadaTipoSanguineoDoador();
+    }
+
 }

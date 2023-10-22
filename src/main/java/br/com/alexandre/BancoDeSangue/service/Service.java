@@ -84,24 +84,10 @@ public class Service {
         Map<String, Double> mediaPorTIpoSanguineo = new HashMap<>(Map.of());
 
         for (TipoSanguineoEnum ts : TipoSanguineoEnum.values()) {
-            mediaPorTIpoSanguineo.put(ts.getValue(), getMedia(ts, pessoas));
+            mediaPorTIpoSanguineo.put(ts.getValue(), getIdadeMedia(ts, pessoas));
         }
 
         return mediaPorTIpoSanguineo;
-    }
-
-    private Double getMedia(TipoSanguineoEnum tipoSanguineo, List<Pessoa> pessoas) {
-        int idade = 0;
-        int quantidadePessoas = 0;
-        for (Pessoa pessoa : pessoas) {
-            if (pessoa.getTipoSanguineo().equals(tipoSanguineo)) {
-                idade += pessoa.getIdade();
-                quantidadePessoas++;
-            }
-        }
-
-        if (idade == 0 && quantidadePessoas == 0) return 0.0;
-        return (double) (idade / quantidadePessoas);
     }
 
     public Map<String, Double> percentualDeObesosPorSexo() {
@@ -115,14 +101,66 @@ public class Service {
         });
 
         Map<String, Double> map = new HashMap<>(Map.of(
-                MASCULINO.getValue(), getMedia(homens),
-                FEMININO.getValue(), getMedia(mulheres)
+                MASCULINO.getValue(), getPercentualMedio(homens),
+                FEMININO.getValue(), getPercentualMedio(mulheres)
         ));
 
         return map;
     }
 
-    private Double getMedia(List<Pessoa> pessoas) {
+    public Map<String, Integer> quantidadeDoadoresParaCadaTipoSanguineoReceptor() {
+        List<Pessoa> pessoas = buscaPessoas("");
+        Map<String, Integer> quantidadeDeDoadoresPorTipoSanguineoReceptor = new HashMap<>();
+
+        for (TipoSanguineoEnum tipoSanguineo : TipoSanguineoEnum.tipos) {
+            quantidadeDeDoadoresPorTipoSanguineoReceptor.put(
+                    tipoSanguineo.getValue(),
+                    getQuantidadeDoadoresTipoSanguineo(pessoas, TipoSanguineoEnum.receberDe(tipoSanguineo))
+            );
+        }
+
+        return quantidadeDeDoadoresPorTipoSanguineoReceptor;
+    }
+
+    public Map<String, Integer> quantidadeReceptoresParaCadaTipoSanguineoDoador() {
+        List<Pessoa> pessoas = buscaPessoas("");
+        Map<String, Integer> quantidadeDeReceptoresPorTipoSanguineoDoador = new HashMap<>();
+
+        for (TipoSanguineoEnum tipoSanguineo : TipoSanguineoEnum.tipos) {
+            quantidadeDeReceptoresPorTipoSanguineoDoador.put(
+                    tipoSanguineo.getValue(),
+                    getQuantidadeDoadoresTipoSanguineo(pessoas, TipoSanguineoEnum.doarPara(tipoSanguineo))
+            );
+        }
+
+        return quantidadeDeReceptoresPorTipoSanguineoDoador;
+    }
+
+    private Integer getQuantidadeDoadoresTipoSanguineo(List<Pessoa> pessoas, List<TipoSanguineoEnum> tipos) {
+        int quantidade = 0;
+        for (TipoSanguineoEnum tipoSanguineo : tipos) {
+            for (Pessoa pessoa : pessoas) {
+                if (pessoa.getTipoSanguineo() == tipoSanguineo) quantidade++;
+            }
+        }
+        return quantidade;
+    }
+
+    private Double getIdadeMedia(TipoSanguineoEnum tipoSanguineo, List<Pessoa> pessoas) {
+        int idade = 0;
+        int quantidadePessoas = 0;
+        for (Pessoa pessoa : pessoas) {
+            if (pessoa.getTipoSanguineo().equals(tipoSanguineo)) {
+                idade += pessoa.getIdade();
+                quantidadePessoas++;
+            }
+        }
+
+        if (idade == 0 && quantidadePessoas == 0) return 0.0;
+        return (double) (idade / quantidadePessoas);
+    }
+
+    private Double getPercentualMedio(List<Pessoa> pessoas) {
         AtomicInteger obesos = new AtomicInteger();
         pessoas.forEach( pessoa -> {
             if (pessoa.getImc() > IMC_30) obesos.getAndIncrement();
@@ -134,40 +172,40 @@ public class Service {
         return Double.parseDouble(doubleFormatado);
     }
 
-    public Map<String, Double> imcMedioPorDezenaDeIdade() {
-        List<Pessoa> pessoas = buscaPessoas("");
-        Map<String, Double> decadas = new HashMap<>();
-        List<ImcPorDecada> imcPorDecadaList = new ArrayList<>();
-
-        for (Pessoa pessoa : pessoas) {
-            int idade = pessoa.getIdade();
-            double imc = (pessoa.getPeso() / (pessoa.getAltura() * pessoa.getAltura()));
-            String keyDezenas = getDezenas(idade);
-            double imcJaRegistrado = decadas.get(keyDezenas);
-            decadas.put(keyDezenas, imc + imcJaRegistrado);
-        }
-
-        for (String decada : decadas.keySet()) {
-            double imcTotal = decadas.get(decada);
-            double mediaImc = imcTotal;
-        }
-
-        return decadas;
-    }
-
-    private String getDezenas(int idade) {
-        String key = "";
-        if (idade < 10) key = ZERO_10;
-        if (idade > 10 && idade < 20) key = ONZE_20;
-        if (idade > 20 && idade < 30) key = VINTE1_30;
-        if (idade > 30 && idade < 40) key = TRINTA1_40;
-        if (idade > 40 && idade < 50) key = QUARENTA1_50;
-        if (idade > 50 && idade < 60) key = CINQUENTA1_60;
-        if (idade > 60 && idade < 70) key = SECENTA1_70;
-        if (idade > 70 && idade < 80) key = SETENTA1_80;
-        if (idade > 80 && idade < 90) key = OITENTA1_90;
-        if (idade > 90) key = NOVENTA1_100;
-        return key;
-    }
+//    public Map<String, Double> imcMedioPorDezenaDeIdade() {
+//        List<Pessoa> pessoas = buscaPessoas("");
+//        Map<String, Double> decadas = new HashMap<>();
+//        List<ImcPorDecada> imcPorDecadaList = new ArrayList<>();
+//
+//        for (Pessoa pessoa : pessoas) {
+//            int idade = pessoa.getIdade();
+//            double imc = (pessoa.getPeso() / (pessoa.getAltura() * pessoa.getAltura()));
+//            String keyDezenas = getDezenas(idade);
+//            double imcJaRegistrado = decadas.get(keyDezenas);
+//            decadas.put(keyDezenas, imc + imcJaRegistrado);
+//        }
+//
+//        for (String decada : decadas.keySet()) {
+//            double imcTotal = decadas.get(decada);
+//            double mediaImc = imcTotal;
+//        }
+//
+//        return decadas;
+//    }
+//
+//    private String getDezenas(int idade) {
+//        String key = "";
+//        if (idade < 10) key = ZERO_10;
+//        if (idade > 10 && idade < 20) key = ONZE_20;
+//        if (idade > 20 && idade < 30) key = VINTE1_30;
+//        if (idade > 30 && idade < 40) key = TRINTA1_40;
+//        if (idade > 40 && idade < 50) key = QUARENTA1_50;
+//        if (idade > 50 && idade < 60) key = CINQUENTA1_60;
+//        if (idade > 60 && idade < 70) key = SECENTA1_70;
+//        if (idade > 70 && idade < 80) key = SETENTA1_80;
+//        if (idade > 80 && idade < 90) key = OITENTA1_90;
+//        if (idade > 90) key = NOVENTA1_100;
+//        return key;
+//    }
 
 }
