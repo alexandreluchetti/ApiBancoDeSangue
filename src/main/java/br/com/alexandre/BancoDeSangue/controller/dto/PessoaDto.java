@@ -21,9 +21,9 @@ public record PessoaDto(
         @Schema(example = "001112223", required = true)
         String rg,
         @JsonAlias({"data_nasc"})
-        @Schema(example = "dd/mm/aaaa", required = true)
+        @Schema(example = "10/07/1992", required = true)
         String dataNascimento, //data_nasc
-        @Schema(example = "Masculino ou Feminino", required = true)
+        @Schema(example = "Masculino", required = true)
         String sexo,
         @Schema(example = "Bia Bala", required = true)
         String mae,
@@ -53,7 +53,7 @@ public record PessoaDto(
         @Schema(example = "80.2", required = true)
         double peso,
         @JsonAlias({"tipo_sanguineo"})
-        @Schema(example = "A+, A-, B+, B-, AB+, AB-, O+ ou O-", required = true)
+        @Schema(example = "A+", required = true)
         String tipoSanguineo //tipo_sanguineo
 
 ) {

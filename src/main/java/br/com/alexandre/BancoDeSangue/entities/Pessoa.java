@@ -74,15 +74,15 @@ public class Pessoa {
 
     public Date getFormatedDate() {
         SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
-
+        Date date = null;
         try {
             java.util.Date utilDate = outputFormat.parse(dataNascimento); // Converte a string para java.util.Date
             String formattedDate = outputFormat.format(utilDate); // Formata a data no formato "yyyy-MM-dd"
-            return Date.valueOf(formattedDate);
+            date = Date.valueOf(formattedDate);
         } catch (ParseException exception) {
             System.out.println(exception.getMessage());
         }
-        return null;
+        return date;
     }
 
     public SexoEnum getSexo() {

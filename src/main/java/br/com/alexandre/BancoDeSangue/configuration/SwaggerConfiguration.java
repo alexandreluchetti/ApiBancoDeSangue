@@ -14,7 +14,7 @@ public class SwaggerConfiguration {
 
     private final String name = "Banco de Sangue";
     private final String version = "1.0.0";
-    private final String description = "Projeto de testes";
+    private final String description = "";
 
     @Bean
     public OpenAPI openAPIConfig() throws UnknownHostException {
