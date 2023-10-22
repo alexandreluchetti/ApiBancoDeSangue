@@ -6,6 +6,7 @@ import br.com.alexandre.BancoDeSangue.entities.TipoSanguineoEnum;
 import br.com.alexandre.BancoDeSangue.repositories.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.File;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,6 +40,7 @@ public class Service {
                 ? pessoasStatic
                 : pessoaRepository.buscaPessoas(cpf);
 
+        if (pessoasStatic == null) return new ArrayList<>();
         return pessoasStatic;
     }
 
