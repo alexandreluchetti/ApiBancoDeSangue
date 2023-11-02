@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body class="p-3 mb-2 bg-dark-subtle text-body">
+
+    <!-- <h1 class="display-6">Banco de Sangue</h1> -->
+    <figure class="text-center">
+        <blockquote class="blockquote">
+          <h1 class="display-6">Banco de Sangue</h1>
+    </figure>
+
+    <hr>
+
+    <div class="d-grid gap-4 col-5 mx-auto">
+
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalReceptores">
+            Cadastrar pessoa
+        </button>
+        <div class="modal fade" id="modalReceptores" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar pessoa</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formularioPessoa">
+                        <div class="mb-3">
+                          <label class="form-label">Nome</label>
+                          <input class="form-control" id="nome" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">CPF</label>
+                          <input class="form-control" id="cpf" placeholder="12345678910" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">RG</label>
+                          <input class="form-control" id="rg" placeholder="12345678" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Data de nascimento</label>
+                          <input class="form-control" id="data-nascimento" placeholder="dd/mm/aaaa" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Sexo</label>
+                          <select class="form-select" aria-label="Default select example" id="sexo" required>
+                            <option selected disabled>Sexo</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Nome da mae</label>
+                          <input class="form-control" id="mae" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Nome do pai</label>
+                          <input class="form-control" id="pai" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Email</label>
+                          <input class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">CEP</label>
+                          <input class="form-control" id="cep" placeholder="12345-678" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Rua/Av</label>
+                          <input class="form-control" id="endereco" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Numero</label>
+                          <input class="form-control" id="numero" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Bairro</label>
+                          <input class="form-control" id="bairro" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Cidade</label>
+                          <input class="form-control" id="cidade" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Estado</label>
+                          <input class="form-control" id="estado" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Telefone fixo</label>
+                          <input class="form-control" id="telefone">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Celular</label>
+                          <input class="form-control" id="celular" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Altura</label>
+                          <input class="form-control" id="altura" placeholder="1.8" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Peso</label>
+                          <input class="form-control" id="peso" placeholder="80.2" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Tipo sanguineo</label>
+                          <select class="form-select" aria-label="Default select example" id="tipo-sanguineo" required>
+                            <option selected disabled>Tipo sanguineo</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                          </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="cadastrar">Cadastrar</button>
+                        <button type="reset" class="btn btn-danger">Limpar</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalReceptores">
+            Quantidade de receptores para cada tipo sanguineo doador
+        </button>
+        <div class="modal fade" id="modalReceptores" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Quantidade de receptores para cada tipo sanguineo doador</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tipo sanguineo</th>
+                            <th scope="col">Quantidade receptores</th>
+                        </tr>
+                        </thead>
+                        <tbody id="receptores-tipo-doador"></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalDoadores">
+            Quantidade de doadores para cada tipo sanguineo receptor
+        </button>
+        <div class="modal fade" id="modalDoadores" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Quantidade de doadores para cada tipo sanguineo receptor</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tipo sanguineo</th>
+                            <th scope="col">Quantidade doadores</th>
+                        </tr>
+                        </thead>
+                        <tbody id="doadores-tipo-receptor"></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalCandidatosEstado">
+            Quantidade de candidatos por estado
+        </button>
+        <div class="modal fade" id="modalCandidatosEstado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Quantidade de candidatos por estado</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Quantidade candidatos</th>
+                        </tr>
+                        </thead>
+                        <tbody id="candidatos-estados"></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalObesosSexo">
+            Percentual de obesos por sexo
+        </button>
+        <div class="modal fade" id="modalObesosSexo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Percentual de obesos por sexo</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">% de obesos</th>
+                        </tr>
+                        </thead>
+                        <tbody id="obesos-sexo"></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalImcDecada">
+            Media de IMC por decada
+        </button>
+        <div class="modal fade" id="modalImcDecada" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Media de IMC por decada</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Decada</th>
+                            <th scope="col">Media IMC</th>
+                        </tr>
+                        </thead>
+                        <tbody id="imc-decada-list"></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalIdadeMediaTipoSanguineo">
+            Idade media por cada tipo sanguineo
+        </button>
+        <div class="modal fade" id="modalIdadeMediaTipoSanguineo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Idade media por cada tipo sanguineo</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tipo sanguineo</th>
+                            <th scope="col">Idade media</th>
+                        </tr>
+                        </thead>
+                        <tbody id="idade-media-tipo-sanguineo"></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalPessoas">
+            Pessoas cadastradas
+        </button>
+        <div class="modal fade" id="modalPessoas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Pessoas cadastradas</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">CPF</th>
+                            <th scope="col">RG</th>
+                            <th scope="col">Data de nascimento</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Mae</th>
+                            <th scope="col">Pai</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">CEP</th>
+                            <th scope="col">Endereco</th>
+                            <th scope="col">Numero</th>
+                            <th scope="col">Bairro</th>
+                            <th scope="col">Cidade</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Telefone fixo</th>
+                            <th scope="col">Clular</th>
+                            <th scope="col">Altura</th>
+                            <th scope="col">Peso</th>
+                            <th scope="col">Tipo sanguineo</th>
+                        </tr>
+                        </thead>
+                        <tbody id="pessoas"></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card text-center bg-dark-subtle mt-5">
+        <div class="card-body">
+          <h5 class="card-title">Alexandre Luchetti</h5>
+          <p class="card-text">(16) 99169-9718 | luchetti.92@gmail.com</p>
+          <a href="https://github.com/alexandreluchetti" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">github</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

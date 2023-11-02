@@ -141,7 +141,7 @@ public class Pessoa {
                 nome,
                 cpf,
                 rg,
-                dataNascimento,
+                formatDate(),
                 sexo.getValue(),
                 mae,
                 pai,
@@ -158,6 +158,19 @@ public class Pessoa {
                 peso,
                 tipoSanguineo.getValue()
         );
+    }
+
+    public String formatDate() {
+        SimpleDateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = "";
+        try {
+            java.util.Date date = inputFormat.parse(dataNascimento);
+            formattedDate = outputFormat.format(date);
+        } catch (ParseException exception) {
+            System.out.println(exception.getMessage());
+        }
+        return formattedDate;
     }
 
     @Override
