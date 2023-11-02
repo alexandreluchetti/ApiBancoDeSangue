@@ -18,10 +18,10 @@
 
     <div class="d-grid gap-4 col-5 mx-auto">
 
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalReceptores">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCadastraPessoa">
             Cadastrar pessoa
         </button>
-        <div class="modal fade" id="modalReceptores" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalCadastraPessoa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
@@ -131,6 +131,52 @@
             </div>
         </div>
 
+
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalPessoas">
+          Pessoas cadastradas
+      </button>
+      <div class="modal fade" id="modalPessoas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Pessoas cadastradas</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <table class="table table-hover">
+                      <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nome</th>
+                          <th scope="col">CPF</th>
+                          <th scope="col">RG</th>
+                          <th scope="col">Data de nascimento</th>
+                          <th scope="col">Sexo</th>
+                          <th scope="col">Mae</th>
+                          <th scope="col">Pai</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">CEP</th>
+                          <th scope="col">Endereco</th>
+                          <th scope="col">Numero</th>
+                          <th scope="col">Bairro</th>
+                          <th scope="col">Cidade</th>
+                          <th scope="col">Estado</th>
+                          <th scope="col">Telefone fixo</th>
+                          <th scope="col">Clular</th>
+                          <th scope="col">Altura</th>
+                          <th scope="col">Peso</th>
+                          <th scope="col">Tipo sanguineo</th>
+                      </tr>
+                      </thead>
+                      <tbody id="pessoas"></tbody>
+                  </table>
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+        </div>
+    </div>
 
 
         <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalReceptores">
@@ -308,54 +354,6 @@
                         </tr>
                         </thead>
                         <tbody id="idade-media-tipo-sanguineo"></tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-            </div>
-        </div>
-
-
-
-        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalPessoas">
-            Pessoas cadastradas
-        </button>
-        <div class="modal fade" id="modalPessoas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Pessoas cadastradas</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">CPF</th>
-                            <th scope="col">RG</th>
-                            <th scope="col">Data de nascimento</th>
-                            <th scope="col">Sexo</th>
-                            <th scope="col">Mae</th>
-                            <th scope="col">Pai</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">CEP</th>
-                            <th scope="col">Endereco</th>
-                            <th scope="col">Numero</th>
-                            <th scope="col">Bairro</th>
-                            <th scope="col">Cidade</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Telefone fixo</th>
-                            <th scope="col">Clular</th>
-                            <th scope="col">Altura</th>
-                            <th scope="col">Peso</th>
-                            <th scope="col">Tipo sanguineo</th>
-                        </tr>
-                        </thead>
-                        <tbody id="pessoas"></tbody>
                     </table>
                 </div>
                 <div class="modal-footer">
