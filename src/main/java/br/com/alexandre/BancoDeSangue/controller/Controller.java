@@ -1,6 +1,7 @@
 package br.com.alexandre.BancoDeSangue.controller;
 
-import br.com.alexandre.BancoDeSangue.controller.dto.PessoaDto;
+import br.com.alexandre.BancoDeSangue.controller.dto.PersonDto;
+import br.com.alexandre.BancoDeSangue.exceptions.EmptyListException;
 import br.com.alexandre.BancoDeSangue.service.Service;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,30 +26,28 @@ public class Controller {
 
     @PostMapping(path = "/envia/pessoas")
     @Operation(summary = "Operacao para enviar uma lista de pesoas para o banco de sangue")
-    public void salvaPessoas(@RequestBody List<PessoaDto> pessoaDtoList) {
-        try {
-            for (PessoaDto pessoaDto : pessoaDtoList) {
-                service.registraPessoa(pessoaDto.toPessoa());
-            }
-        } catch (Exception exception) {
-            System.out.println(exception.getMessage());
+    public void savePeople(@RequestBody List<PersonDto> personDtoList) {
+        if (personDtoList == null || personDtoList.isEmpty()) {
+            throw EmptyListException.noPersonAdded();
         }
+
+        service.peopleRegistration(personDtoList.stream().map(PersonDto::toPerson).toList());
     }
 
     @GetMapping(path = "/pessoas")
     @Operation(summary = "Operacao para buscar uma lista de pessoas no banco de dados")
-    public List<PessoaDto> buscaPessoas() {
-        List<PessoaDto> pessoaDtos = new ArrayList<>();
+    public List<PersonDto> buscaPessoas() {
+        List<PersonDto> personDtos = new ArrayList<>();
         try {
-            pessoaDtos = service.buscaPessoaDto("");
+            personDtos = service.buscaPessoaDto(null);
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
-        return pessoaDtos;
+        return personDtos;
     }
 
     @GetMapping(path = "/pessoas/estados")
-    @Operation(summary = "Operacao para buscar a quantidade de candidatos em cada estado do Brasil")
+    @Operation(summary = "Operacao para buscar a quantidade de candidatos em cada state do Brasil")
     public Map<String, Integer> candidatosPorEstado() {
         Map<String, Integer> canditosPorEstado = new HashMap<>();
         try {
@@ -59,8 +58,8 @@ public class Controller {
         return canditosPorEstado;
     }
 
-    @GetMapping(path = "/percentual/obesos/sexo")
-    @Operation(summary = "Operacao para buscar o percentual de obesos por sexo")
+    @GetMapping(path = "/percentual/obesos/sex")
+    @Operation(summary = "Operacao para buscar o percentual de obesos por sex")
     public Map<String, Double> percentualDeObesosPorSexo() {
         Map<String, Double> percentualDeObesosPorSexo = new HashMap<>();
         try {

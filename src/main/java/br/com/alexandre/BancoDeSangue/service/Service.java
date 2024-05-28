@@ -1,12 +1,11 @@
 package br.com.alexandre.BancoDeSangue.service;
 
-import br.com.alexandre.BancoDeSangue.controller.dto.PessoaDto;
-import br.com.alexandre.BancoDeSangue.entities.Pessoa;
-import br.com.alexandre.BancoDeSangue.entities.TipoSanguineoEnum;
-import br.com.alexandre.BancoDeSangue.repositories.PessoaRepository;
+import br.com.alexandre.BancoDeSangue.controller.dto.PersonDto;
+import br.com.alexandre.BancoDeSangue.entities.Person;
+import br.com.alexandre.BancoDeSangue.entities.BloodTypeEnum;
+import br.com.alexandre.BancoDeSangue.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.File;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,51 +13,62 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static br.com.alexandre.BancoDeSangue.entities.SexoEnum.FEMININO;
-import static br.com.alexandre.BancoDeSangue.entities.SexoEnum.MASCULINO;
+import static br.com.alexandre.BancoDeSangue.entities.SexEnum.FEMALE;
+import static br.com.alexandre.BancoDeSangue.entities.SexEnum.MALE;
 
 @org.springframework.stereotype.Service
 public class Service {
      private static final Integer IMC_30 = 30;
      private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.##");
 
-    private static List<Pessoa> pessoasStatic = new ArrayList<>();
+    private static List<Person> pessoasStatic = new ArrayList<>();
 
-    private PessoaRepository pessoaRepository;
+    private PersonRepository personRepository;
 
     @Autowired
-    public Service(PessoaRepository pessoaRepository) {
-        this.pessoaRepository = pessoaRepository;
+    public Service(PersonRepository personRepository) {
+        this.personRepository = personRepository;
     }
 
-    public void registraPessoa(Pessoa pessoa) {
-        pessoaRepository.registrarPessoa(pessoa);
+    public void personRegistration(Person person) {
+        personRepository.personRegistration(person);
     }
 
-    public List<Pessoa> buscaPessoas(String cpf) {
+    public void peopleRegistration(List<Person> people) {
+        people.forEach(person -> {
+            try {
+                personRepository.personRegistration(person);
+            } catch (Exception exception) {
+                System.out.println(exception.getMessage());
+                throw exception;
+            }
+        });
+    }
+    
+    public List<Person> buscaPessoas(String cpf) {
         pessoasStatic = (pessoasStatic.size() > 0)
                 ? pessoasStatic
-                : pessoaRepository.buscaPessoas(cpf);
+                : personRepository.getPeopleByCpf(cpf);
 
         if (pessoasStatic == null) return new ArrayList<>();
         return pessoasStatic;
     }
 
-    public List<PessoaDto> buscaPessoaDto(String cpf) {
-        List<Pessoa> pessoas = buscaPessoas(cpf);
-        List<PessoaDto> pessoaDtos = new ArrayList<>();
-        pessoas.forEach( pessoa -> {
-            pessoaDtos.add(pessoa.toDto());
+    public List<PersonDto> buscaPessoaDto(String cpf) {
+        List<Person> people = buscaPessoas(cpf);
+        List<PersonDto> personDtos = new ArrayList<>();
+        people.forEach(person -> {
+            personDtos.add(person.toDto());
         });
-        return pessoaDtos;
+        return personDtos;
     }
 
     public Map<String, Integer> candidatosPorEstado() {
-        List<Pessoa> pessoas = buscaPessoas("");
+        List<Person> people = buscaPessoas("");
         Map<String, Integer> pessoasPorEstado = new HashMap<>();
 
-        for (Pessoa pessoa : pessoas) {
-            String estado = pessoa.getEndereco().getEstado();
+        for (Person person : people) {
+            String estado = person.getAddress().getState();
             if (pessoasPorEstado.containsKey(estado)) {
                 int quantidade = pessoasPorEstado.get(estado) + 1;
                 pessoasPorEstado.put(estado, quantidade);
@@ -71,42 +81,42 @@ public class Service {
     }
 
     public Map<String, Double> mediaIdadePorTipoSanguineo() {
-        List<Pessoa> pessoas = buscaPessoas("");
+        List<Person> people = buscaPessoas("");
         Map<String, Double> mediaPorTIpoSanguineo = new HashMap<>(Map.of());
 
-        for (TipoSanguineoEnum ts : TipoSanguineoEnum.values()) {
-            mediaPorTIpoSanguineo.put(ts.getValue(), getIdadeMedia(ts, pessoas));
+        for (BloodTypeEnum ts : BloodTypeEnum.values()) {
+            mediaPorTIpoSanguineo.put(ts.getValue(), getIdadeMedia(ts, people));
         }
 
         return mediaPorTIpoSanguineo;
     }
 
     public Map<String, Double> percentualDeObesosPorSexo() {
-        List<Pessoa> pessoas = buscaPessoas("");
-        List<Pessoa> homens = new ArrayList<>();
-        List<Pessoa> mulheres = new ArrayList<>();
+        List<Person> people = buscaPessoas("");
+        List<Person> homens = new ArrayList<>();
+        List<Person> mulheres = new ArrayList<>();
 
-        pessoas.forEach( pessoa -> {
-            if (pessoa.getSexo().equals(MASCULINO)) homens.add(pessoa);
-            else mulheres.add(pessoa);
+        people.forEach(person -> {
+            if (person.getSex().equals(MALE)) homens.add(person);
+            else mulheres.add(person);
         });
 
         Map<String, Double> map = new HashMap<>(Map.of(
-                MASCULINO.getValue(), getPercentualMedio(homens),
-                FEMININO.getValue(), getPercentualMedio(mulheres)
+                MALE.getValue(), getPercentualMedio(homens),
+                FEMALE.getValue(), getPercentualMedio(mulheres)
         ));
 
         return map;
     }
 
     public Map<String, Integer> quantidadeDoadoresParaCadaTipoSanguineoReceptor() {
-        List<Pessoa> pessoas = buscaPessoas("");
+        List<Person> people = buscaPessoas("");
         Map<String, Integer> quantidadeDeDoadoresPorTipoSanguineoReceptor = new HashMap<>();
 
-        for (TipoSanguineoEnum tipoSanguineo : TipoSanguineoEnum.tipos) {
+        for (BloodTypeEnum tipoSanguineo : BloodTypeEnum.tipos) {
             quantidadeDeDoadoresPorTipoSanguineoReceptor.put(
                     tipoSanguineo.getValue(),
-                    getQuantidadeDoadoresTipoSanguineo(pessoas, TipoSanguineoEnum.receberDe(tipoSanguineo))
+                    getQuantidadeDoadoresTipoSanguineo(people, BloodTypeEnum.receberDe(tipoSanguineo))
             );
         }
 
@@ -114,13 +124,13 @@ public class Service {
     }
 
     public Map<String, Integer> quantidadeReceptoresParaCadaTipoSanguineoDoador() {
-        List<Pessoa> pessoas = buscaPessoas("");
+        List<Person> people = buscaPessoas("");
         Map<String, Integer> quantidadeDeReceptoresPorTipoSanguineoDoador = new HashMap<>();
 
-        for (TipoSanguineoEnum tipoSanguineo : TipoSanguineoEnum.tipos) {
+        for (BloodTypeEnum tipoSanguineo : BloodTypeEnum.tipos) {
             quantidadeDeReceptoresPorTipoSanguineoDoador.put(
                     tipoSanguineo.getValue(),
-                    getQuantidadeDoadoresTipoSanguineo(pessoas, TipoSanguineoEnum.doarPara(tipoSanguineo))
+                    getQuantidadeDoadoresTipoSanguineo(people, BloodTypeEnum.doarPara(tipoSanguineo))
             );
         }
 
@@ -128,13 +138,13 @@ public class Service {
     }
 
     public Map<String, Double> imcMedioPorDecada() {
-        List<Pessoa> pessoas = buscaPessoas("");
-        Map<String, Double> imcMedioPorDecada = getImcMedio(pessoas);
+        List<Person> people = buscaPessoas("");
+        Map<String, Double> imcMedioPorDecada = getImcMedio(people);
         return imcMedioPorDecada;
     }
 
-    private Map<String, Double> getImcMedio(List<Pessoa> pessoas) {
-        Map<String, Double> imcMedioPorDecada = getNomeDecadas(pessoas);
+    private Map<String, Double> getImcMedio(List<Person> people) {
+        Map<String, Double> imcMedioPorDecada = getNomeDecadas(people);
         Map<String, Double> map = new HashMap<>();
         for (String nomeDecada : imcMedioPorDecada.keySet()) {
             double imc = 0;
@@ -143,10 +153,10 @@ public class Service {
             Integer inicioDecada = Integer.parseInt(numerosDecada[0].trim());
             Integer fimDecada = Integer.parseInt(numerosDecada[1].trim());
 
-            for (Pessoa pessoa : pessoas) {
-                int idade = pessoa.getIdade();
+            for (Person person : people) {
+                int idade = person.getAge();
                 if (idade >= inicioDecada && idade <= fimDecada) {
-                    imc += pessoa.getImc();
+                    imc += person.getImc();
                     quantidade++;
                 }
             }
@@ -158,10 +168,10 @@ public class Service {
         return map;
     }
 
-    private Map<String, Double> getNomeDecadas(List<Pessoa> pessoas) {
+    private Map<String, Double> getNomeDecadas(List<Person> people) {
         Map<String, Double> nomeDecadas = new HashMap<>();
-        for (Pessoa pessoa : pessoas) {
-            int idade = pessoa.getIdade();
+        for (Person person : people) {
+            int idade = person.getAge();
             char[] charArray = String.valueOf(idade).toCharArray();
 
             String nomeDecada = "";
@@ -181,22 +191,22 @@ public class Service {
         return nomeDecadas;
     }
 
-    private Integer getQuantidadeDoadoresTipoSanguineo(List<Pessoa> pessoas, List<TipoSanguineoEnum> tipos) {
+    private Integer getQuantidadeDoadoresTipoSanguineo(List<Person> people, List<BloodTypeEnum> tipos) {
         int quantidade = 0;
-        for (TipoSanguineoEnum tipoSanguineo : tipos) {
-            for (Pessoa pessoa : pessoas) {
-                if (pessoa.getTipoSanguineo() == tipoSanguineo) quantidade++;
+        for (BloodTypeEnum tipoSanguineo : tipos) {
+            for (Person person : people) {
+                if (person.getBloodType() == tipoSanguineo) quantidade++;
             }
         }
         return quantidade;
     }
 
-    private Double getIdadeMedia(TipoSanguineoEnum tipoSanguineo, List<Pessoa> pessoas) {
+    private Double getIdadeMedia(BloodTypeEnum tipoSanguineo, List<Person> people) {
         int idade = 0;
         int quantidadePessoas = 0;
-        for (Pessoa pessoa : pessoas) {
-            if (pessoa.getTipoSanguineo().equals(tipoSanguineo)) {
-                idade += pessoa.getIdade();
+        for (Person person : people) {
+            if (person.getBloodType().equals(tipoSanguineo)) {
+                idade += person.getAge();
                 quantidadePessoas++;
             }
         }
@@ -205,13 +215,13 @@ public class Service {
         return (double) (idade / quantidadePessoas);
     }
 
-    private Double getPercentualMedio(List<Pessoa> pessoas) {
+    private Double getPercentualMedio(List<Person> people) {
         AtomicInteger obesos = new AtomicInteger();
-        pessoas.forEach( pessoa -> {
-            if (pessoa.getImc() > IMC_30) obesos.getAndIncrement();
+        people.forEach(person -> {
+            if (person.getImc() > IMC_30) obesos.getAndIncrement();
         });
 
-        Double media = ((double) (obesos.get() * 100) / pessoas.size());
+        Double media = ((double) (obesos.get() * 100) / people.size());
         return formatDouble(media);
     }
 
