@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,86 +35,79 @@ public class Controller {
 
     @GetMapping(path = "/pessoas")
     @Operation(summary = "Operacao para buscar uma lista de pessoas no banco de dados")
-    public List<PersonDto> buscaPessoas() {
-        List<PersonDto> personDtos = new ArrayList<>();
+    public List<PersonDto> getPeople() {
         try {
-            personDtos = service.buscaPessoaDto(null);
+            return service.getPeopleByCpf(null);
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
+            throw new RuntimeException(exception);
         }
-        return personDtos;
     }
 
     @GetMapping(path = "/pessoas/estados")
     @Operation(summary = "Operacao para buscar a quantidade de candidatos em cada state do Brasil")
-    public Map<String, Integer> candidatosPorEstado() {
-        Map<String, Integer> canditosPorEstado = new HashMap<>();
+    public Map<String, Integer> candidatesPerState() {
         try {
-            canditosPorEstado = service.candidatosPorEstado();
+            return service.getCandidatesPerState();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
+            throw new RuntimeException(exception);
         }
-        return canditosPorEstado;
     }
 
-    @GetMapping(path = "/percentual/obesos/sex")
+    @GetMapping(path = "/percentual/obesos/sexo")
     @Operation(summary = "Operacao para buscar o percentual de obesos por sex")
-    public Map<String, Double> percentualDeObesosPorSexo() {
-        Map<String, Double> percentualDeObesosPorSexo = new HashMap<>();
+    public Map<String, Double> percentageOverWeightPeopleBySex() {
         try {
-            percentualDeObesosPorSexo = service.percentualDeObesosPorSexo();
+            return service.getPercentageOverWeightPeopleBySex();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
+            throw new RuntimeException(exception);
         }
-        return percentualDeObesosPorSexo;
     }
 
     @GetMapping(path = "/media/idade/tiposanguineo")
     @Operation(summary = "Operacao para buscar idade media por cada tipo sanguineo")
-    public Map<String, Double> mediaIdadePorTipoSanguineo() {
-        Map<String, Double> mediaIdadePorTipoSanguineo = new HashMap<>();
+    public Map<String, Double> avgAgeByBloodType() {
         try {
-            mediaIdadePorTipoSanguineo = service.mediaIdadePorTipoSanguineo();
+            return service.getAvgAgeByBloodType();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
+            throw new RuntimeException(exception);
         }
-        return mediaIdadePorTipoSanguineo;
     }
 
     @GetMapping(path = "/quantidade/doadores/tiposanguineo/receptor")
     @Operation(summary = "Operacao para buscar a quantidade de doadores para cada tipo sanguineo receptor")
-    public Map<String, Integer> quantidadeDoadoresParaCadaTipoSanguineoReceptor() {
-        Map<String, Integer> doadoresPorReceptor = new HashMap<>();
+    public Map<String, Integer> amountOfDonorsForEachBloodTypeRecipient() {
         try {
-            doadoresPorReceptor = service.quantidadeDoadoresParaCadaTipoSanguineoReceptor();
+            return service.amountOfDonorsForEachBloodTypeRecipient();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
+            throw new RuntimeException(exception);
         }
-        return doadoresPorReceptor;
     }
 
     @GetMapping(path = "/quantidade/receptores/tiposanguineo/doador")
     @Operation(summary = "Operacao para buscar a quantidade de receptores para cada tipo sanguineo doador")
-    public Map<String, Integer> quantidadeReceptoresParaCadaTipoSanguineoDoador() {
-        Map<String, Integer> receptoresPorDoador = new HashMap<>();
+    public Map<String, Integer> amountOfRecipientsForEachBloodTypeDonor() {
         try {
-            receptoresPorDoador = service.quantidadeReceptoresParaCadaTipoSanguineoDoador();
+            return service.amountOfRecipientsForEachBloodTypeDonor();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
+            throw new RuntimeException(exception);
         }
-        return receptoresPorDoador;
     }
 
     @GetMapping(path = "/media/imc/decada")
     @Operation(summary = "Operacao para buscar a media de IMC por cada decada")
-    public Map<String, Double> imcMedioPorDecada() {
-        Map<String, Double> imcMedioPorDecada = new HashMap<>();
+    public Map<String, Double> averageBmiPerDecade() {
         try {
-            imcMedioPorDecada = service.imcMedioPorDecada();
+            return service.averageBmiPerDecade();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
+            throw new RuntimeException(exception);
         }
-        return imcMedioPorDecada;
     }
 
 }

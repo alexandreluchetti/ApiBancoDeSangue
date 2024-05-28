@@ -18,7 +18,7 @@ public enum BloodTypeEnum {
     public static final List<BloodTypeEnum> tipos = List.of(
             A_POSITIVE, A_NEGATIVE, B_POSITIVE, B_NEGATIVE, AB_POSITIVE, AB_NEGATIVE, O_POSITIVE, O_NEGATIVE);
 
-    public static final List<BloodTypeEnum> doarPara(BloodTypeEnum tipoSanguineo) {
+    public static final List<BloodTypeEnum> donateTo(BloodTypeEnum tipoSanguineo) {
         return switch (tipoSanguineo) {
             case A_POSITIVE -> List.of(AB_POSITIVE, A_POSITIVE);
             case A_NEGATIVE -> List.of(A_POSITIVE, A_NEGATIVE, AB_POSITIVE, AB_NEGATIVE);
@@ -32,7 +32,7 @@ public enum BloodTypeEnum {
         };
     }
 
-    public static final List<BloodTypeEnum> receberDe(BloodTypeEnum tipoSanguineo) {
+    public static final List<BloodTypeEnum> recieveFrom(BloodTypeEnum tipoSanguineo) {
         return switch (tipoSanguineo) {
             case A_POSITIVE -> List.of(A_POSITIVE, A_NEGATIVE, O_POSITIVE, O_NEGATIVE);
             case A_NEGATIVE -> List.of(A_NEGATIVE, O_NEGATIVE);

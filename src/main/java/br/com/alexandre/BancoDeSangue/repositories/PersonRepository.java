@@ -23,8 +23,8 @@ public class PersonRepository {
 
     private static final Integer TIMEOUT = 60;
 
-    private final String CALL_PERSON_REGISTRATION_PRC = "CALL banco_de_sangue.registra_pessoa_prc(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    private final String CALL_GET_PERSON_BY_CPF = "CALL banco_de_sangue.busca_pessoa_por_cpf(?)";
+    private final String CALL_PERSON_REGISTRATION_PRC = "CALL banco_de_sangue.registra_pessoa_prc(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    private final String CALL_GET_PERSON_BY_CPF = "CALL banco_de_sangue.busca_pessoa_por_cpf(?);";
 
     private JdbcTemplate jdbc;
 
