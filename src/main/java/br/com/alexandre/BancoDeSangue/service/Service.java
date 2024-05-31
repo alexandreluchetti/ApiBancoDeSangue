@@ -46,14 +46,7 @@ public class Service {
     }
 
     public List<PersonDto> getPeopleByCpf(String cpf) {
-        List<Person> people = getPeople(cpf);
-//        List<PersonDto> personDtos = new ArrayList<>();
-        return people.stream().map(Person::toDto).toList();
-//
-//        people.forEach(person -> {
-//            personDtos.add(person.toDto());
-//        });
-//        return personDtos;
+        return getPeople(cpf).stream().map(Person::toDto).toList();
     }
 
     public Map<String, Integer> getCandidatesPerState() {
