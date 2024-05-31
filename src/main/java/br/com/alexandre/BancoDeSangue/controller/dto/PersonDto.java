@@ -4,7 +4,7 @@ import br.com.alexandre.BancoDeSangue.entities.Address;
 import br.com.alexandre.BancoDeSangue.entities.Person;
 import br.com.alexandre.BancoDeSangue.entities.SexEnum;
 import br.com.alexandre.BancoDeSangue.entities.BloodTypeEnum;
-import br.com.alexandre.BancoDeSangue.exceptions.DtoException;
+import br.com.alexandre.BancoDeSangue.exceptions.PersonException;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -101,7 +101,7 @@ public record PersonDto(
             Address addressObj = new Address(null, zipcode, address, number, neighborhood, city, state);
             return new Person(name, cpf, rg, getFormattedDate(), sexEnum, mother, father, email, addressObj, homePhone, cellphone, height, weight, bloodTypeEnum);
         } catch (Exception exception) {
-            throw DtoException.convert(this);
+            throw PersonException.convert(this);
         }
     }
 

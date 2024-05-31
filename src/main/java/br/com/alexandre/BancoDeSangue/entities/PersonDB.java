@@ -88,10 +88,22 @@ public class PersonDB {
         this.bloodType = "";
     }
 
+    private String formattCpf() {
+        if (this.cpf.length() == 11) {
+            return  (this.cpf.substring(0, 3) + "." +
+                    this.cpf.substring(3, 6) + "." +
+                    this.cpf.substring(6, 9) + "-" +
+                    this.cpf.substring(9))
+                    .trim();
+        } else {
+            return this.cpf;
+        }
+    }
+
     public Person toPerson() {
         return new Person(
                 this.name,
-                this.cpf,
+                this.formattCpf(),
                 this.rg,
                 this.birthdate,
                 SexEnum.getEnumFromChar(this.sex),

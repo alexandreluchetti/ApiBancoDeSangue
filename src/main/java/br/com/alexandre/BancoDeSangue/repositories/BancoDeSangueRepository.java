@@ -15,6 +15,8 @@ public interface BancoDeSangueRepository extends Repository<PersonDB, Long> {
     @Procedure(value = "banco_de_sangue.busca_pessoa_por_cpf")
     List<PersonDB> getPeople(String cpf);
 
+    PersonDB findPeopleByCpf(String cpf);
+
     @Procedure(value = "banco_de_sangue.registra_pessoa_prc")
     void register(
             String name,

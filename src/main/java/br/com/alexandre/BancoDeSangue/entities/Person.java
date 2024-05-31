@@ -131,6 +131,10 @@ public class Person {
         }
     }
 
+    public String getCleanCpf() {
+        return this.cpf.replace(".", "").replace("-", "").trim();
+    }
+
     @Override
     public String toString() {
         return "Person{" +

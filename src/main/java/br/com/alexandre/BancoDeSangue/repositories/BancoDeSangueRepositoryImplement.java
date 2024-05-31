@@ -3,6 +3,7 @@ package br.com.alexandre.BancoDeSangue.repositories;
 import br.com.alexandre.BancoDeSangue.entities.Person;
 import br.com.alexandre.BancoDeSangue.entities.PersonDB;
 import br.com.alexandre.BancoDeSangue.exceptions.EmptyListException;
+import br.com.alexandre.BancoDeSangue.exceptions.PersonException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -29,9 +30,31 @@ public class BancoDeSangueRepositoryImplement {
     }
 
     public void register(Person person) {
+        try {
+            String cpf = person.getCleanCpf();
+            if (isAlreadyRegistered(cpf)) {
+                throw PersonException.cpfAlreadyRegistered(cpf);
+            } else {
+                registerPerson(person);
+            }
+        } catch (Exception exception) {
+            throw PersonException.impossibleToRegister(person);
+        }
+    }
+
+    private boolean isAlreadyRegistered(String cpf) {
+        try {
+            String cpfDB = this.repository.findPeopleByCpf(cpf).getCpf();
+            return cpf.equals(cpfDB);
+        } catch (Exception exception) {
+            return false;
+        }
+    }
+
+    private void registerPerson(Person person) {
         this.repository.register(
                 person.getName(),
-                person.getCpf(),
+                person.getCleanCpf(),
                 person.getRg(),
                 person.getFormattedDate(),
                 person.getSex().getValueChar(),

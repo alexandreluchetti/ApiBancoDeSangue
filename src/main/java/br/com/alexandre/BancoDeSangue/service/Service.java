@@ -21,7 +21,7 @@ public class Service {
      private static final Integer IMC_30 = 30;
      private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.##");
 
-    private static List<Person> pessoasStatic = null;
+    private static List<Person> staticPeoplesList = null;
 
     private BancoDeSangueRepositoryImplement repository;
 
@@ -30,24 +30,28 @@ public class Service {
         this.repository = repository;
     }
 
+    private List<Person> getPeoplesList() {
+        if (staticPeoplesList == null) staticPeoplesList = repository.getPeople();
+        return staticPeoplesList;
+    }
+
     public void peopleRegistration(List<Person> people) {
         people.forEach(person -> {
             try {
-                System.out.println(person);
                 this.repository.register(person);
             } catch (Exception exception) {
-                System.out.println(exception.getMessage());
-                throw exception;
+                System.out.println("IMPOSSIVEL REGISTRAR PESSOA: " + exception.getMessage());
             }
         });
+        staticPeoplesList = repository.getPeople();
     }
 
     public List<PersonDto> getPersonList() {
-        return this.repository.getPeople().stream().map(Person::toDto).toList();
+        return this.getPeoplesList().stream().map(Person::toDto).toList();
     }
 
     public Map<String, Integer> getCandidatesPerState() {
-        List<Person> people = this.repository.getPeople();
+        List<Person> people = this.getPeoplesList();
         Map<String, Integer> peopleByState = new HashMap<>();
 
         for (Person person : people) {
@@ -64,7 +68,7 @@ public class Service {
     }
 
     public Map<String, Double> getAvgAgeByBloodType() {
-        List<Person> people = this.repository.getPeople();
+        List<Person> people = this.getPeoplesList();
         Map<String, Double> avgAgeByBloodType = new HashMap<>(Map.of());
 
         for (BloodTypeEnum bloodType : BloodTypeEnum.values()) {
@@ -75,7 +79,7 @@ public class Service {
     }
 
     public Map<String, Double> getPercentageOverWeightPeopleBySex() {
-        List<Person> people = this.repository.getPeople();
+        List<Person> people = this.getPeoplesList();
         List<Person> men = new ArrayList<>();
         List<Person> women = new ArrayList<>();
 
@@ -93,7 +97,7 @@ public class Service {
     }
 
     public Map<String, Integer> amountOfDonorsForEachBloodTypeRecipient() {
-        List<Person> people = this.repository.getPeople();
+        List<Person> people = this.getPeoplesList();
         Map<String, Integer> amountOfDonorsForEachBloodTypeRecipient = new HashMap<>();
 
         for (BloodTypeEnum bloodType : BloodTypeEnum.tipos) {
@@ -107,7 +111,7 @@ public class Service {
     }
 
     public Map<String, Integer> amountOfRecipientsForEachBloodTypeDonor() {
-        List<Person> people = this.repository.getPeople();
+        List<Person> people = this.getPeoplesList();
         Map<String, Integer> amountOfRecipientsForEachBloodTypeDonor = new HashMap<>();
 
         for (BloodTypeEnum bloodType : BloodTypeEnum.tipos) {
@@ -121,7 +125,7 @@ public class Service {
     }
 
     public Map<String, Double> averageBmiPerDecade() {
-        List<Person> people = this.repository.getPeople();
+        List<Person> people = this.getPeoplesList();
         Map<String, Double> averageBmiPerDecade = getAvgBmi(people);
         return averageBmiPerDecade;
     }
@@ -211,12 +215,5 @@ public class Service {
         String stringValue = DECIMAL_FORMAT.format(value).replace(",", ".");
         return Double.parseDouble(stringValue);
     }
-
-//    private List<Person> getPeople() {
-//        if (pessoasStatic == null) {
-//            pessoasStatic = this.repository.getPeople();
-//        }
-//        return pessoasStatic;
-//    }
 
 }
