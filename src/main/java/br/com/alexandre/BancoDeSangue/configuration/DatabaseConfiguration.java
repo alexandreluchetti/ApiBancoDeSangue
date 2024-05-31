@@ -1,33 +1,61 @@
 package br.com.alexandre.BancoDeSangue.configuration;
 
-import org.springframework.beans.factory.annotation.Value;
+import jakarta.persistence.EntityManagerFactory;
+import org.antlr.v4.runtime.misc.NotNull;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.context.annotation.Primary;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
 @Configuration
+@EnableTransactionManagement
+@EnableJpaRepositories(
+        entityManagerFactoryRef = "entityManager",
+        transactionManagerRef = "transactionManager",
+        basePackages = {"br.com.alexandre.BancoDeSangue.repositories"}
+)
 public class DatabaseConfiguration {
-    @Value("${database.driver}")
-    private String driver;
-    @Value("${database.url}")
-    private String url;
-    @Value("${database.username}")
-    private String username;
-    @Value("${database.password}")
-    private String password;
 
-    @Bean(name = "bancoDeSangueJdbc")
-    public JdbcTemplate jdbcBancoDeSangue() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(driver);
-        dataSource.setUrl(url);
-        dataSource.setUsername(username);
-        dataSource.setPassword(password);
+    @Primary
+    @Bean(name = "dataSource")
+    @ConfigurationProperties(prefix = "database")
+    public DataSource dataSource() {
+        return DataSourceBuilder.create().build();
+    }
 
-        return new JdbcTemplate(dataSource);
+    @NotNull
+    @Primary
+    @Bean(name = "entityManager")
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(
+            @NotNull EntityManagerFactoryBuilder builder,
+            @Qualifier("dataSource") DataSource dataSource
+    ) {
+        return builder
+                .dataSource(dataSource)
+                .packages("br.com.alexandre.BancoDeSangue.entities")
+                .persistenceUnit("entities")
+                .build();
+    }
+
+    @NotNull
+    @Primary
+    @Bean(name = "transactionManager")
+    public PlatformTransactionManager transactionManager(
+            @NotNull
+            @Qualifier("entityManager")
+            EntityManagerFactory entityManagerFactory
+    ) {
+        return new JpaTransactionManager(entityManagerFactory);
     }
 
 }

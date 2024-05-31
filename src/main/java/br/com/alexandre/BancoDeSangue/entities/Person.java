@@ -77,8 +77,8 @@ public class Person {
     public Date getFormattedDate() {
         SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
-            java.util.Date utilDate = outputFormat.parse(birthdate); // Converte a string para java.util.Date
-            String formattedDate = outputFormat.format(utilDate); // Formata a data no formato "yyyy-MM-dd"
+            java.util.Date utilDate = outputFormat.parse(birthdate);
+            String formattedDate = outputFormat.format(utilDate);
             return Date.valueOf(formattedDate);
         } catch (ParseException exception) {
             throw FormatException.stringDateFormat();

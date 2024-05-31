@@ -1,9 +1,9 @@
 package br.com.alexandre.BancoDeSangue.service;
 
 import br.com.alexandre.BancoDeSangue.controller.dto.PersonDto;
-import br.com.alexandre.BancoDeSangue.entities.Person;
 import br.com.alexandre.BancoDeSangue.entities.BloodTypeEnum;
-import br.com.alexandre.BancoDeSangue.repositories.PersonRepository;
+import br.com.alexandre.BancoDeSangue.entities.Person;
+import br.com.alexandre.BancoDeSangue.repositories.BancoDeSangueRepositoryImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.text.DecimalFormat;
@@ -23,21 +23,17 @@ public class Service {
 
     private static List<Person> pessoasStatic = null;
 
-    private PersonRepository personRepository;
+    private BancoDeSangueRepositoryImplement repository;
 
     @Autowired
-    public Service(PersonRepository personRepository) {
-        this.personRepository = personRepository;
-    }
-
-    public void personRegistration(Person person) {
-        personRepository.personRegistration(person);
+    public Service(BancoDeSangueRepositoryImplement repository) {
+        this.repository = repository;
     }
 
     public void peopleRegistration(List<Person> people) {
         people.forEach(person -> {
             try {
-                personRepository.personRegistration(person);
+                this.repository.register(person);
             } catch (Exception exception) {
                 System.out.println(exception.getMessage());
                 throw exception;
@@ -46,11 +42,11 @@ public class Service {
     }
 
     public List<PersonDto> getPersonList() {
-        return getPeople().stream().map(Person::toDto).toList();
+        return this.repository.getPeople().stream().map(Person::toDto).toList();
     }
 
     public Map<String, Integer> getCandidatesPerState() {
-        List<Person> people = getPeople();
+        List<Person> people = this.repository.getPeople();
         Map<String, Integer> peopleByState = new HashMap<>();
 
         for (Person person : people) {
@@ -67,7 +63,7 @@ public class Service {
     }
 
     public Map<String, Double> getAvgAgeByBloodType() {
-        List<Person> people = getPeople();
+        List<Person> people = this.repository.getPeople();
         Map<String, Double> avgAgeByBloodType = new HashMap<>(Map.of());
 
         for (BloodTypeEnum bloodType : BloodTypeEnum.values()) {
@@ -78,7 +74,7 @@ public class Service {
     }
 
     public Map<String, Double> getPercentageOverWeightPeopleBySex() {
-        List<Person> people = getPeople();
+        List<Person> people = this.repository.getPeople();
         List<Person> men = new ArrayList<>();
         List<Person> women = new ArrayList<>();
 
@@ -96,7 +92,7 @@ public class Service {
     }
 
     public Map<String, Integer> amountOfDonorsForEachBloodTypeRecipient() {
-        List<Person> people = getPeople();
+        List<Person> people = this.repository.getPeople();
         Map<String, Integer> amountOfDonorsForEachBloodTypeRecipient = new HashMap<>();
 
         for (BloodTypeEnum bloodType : BloodTypeEnum.tipos) {
@@ -110,7 +106,7 @@ public class Service {
     }
 
     public Map<String, Integer> amountOfRecipientsForEachBloodTypeDonor() {
-        List<Person> people = getPeople();
+        List<Person> people = this.repository.getPeople();
         Map<String, Integer> amountOfRecipientsForEachBloodTypeDonor = new HashMap<>();
 
         for (BloodTypeEnum bloodType : BloodTypeEnum.tipos) {
@@ -124,7 +120,7 @@ public class Service {
     }
 
     public Map<String, Double> averageBmiPerDecade() {
-        List<Person> people = getPeople();
+        List<Person> people = this.repository.getPeople();
         Map<String, Double> averageBmiPerDecade = getAvgBmi(people);
         return averageBmiPerDecade;
     }
@@ -215,11 +211,11 @@ public class Service {
         return Double.parseDouble(stringValue);
     }
 
-    private List<Person> getPeople() {
-        if (pessoasStatic == null) {
-            pessoasStatic = personRepository.getPeopleByCpf(null);
-        }
-        return pessoasStatic;
-    }
+//    private List<Person> getPeople() {
+//        if (pessoasStatic == null) {
+//            pessoasStatic = this.repository.getPeople();
+//        }
+//        return pessoasStatic;
+//    }
 
 }

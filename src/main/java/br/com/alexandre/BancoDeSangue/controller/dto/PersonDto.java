@@ -98,7 +98,7 @@ public record PersonDto(
         try {
             SexEnum sexEnum = SexEnum.getEnum(sex);
             BloodTypeEnum bloodTypeEnum = BloodTypeEnum.getEnum(bloodType);
-            Address addressObj = new Address(zipcode, address, number, neighborhood, city, state);
+            Address addressObj = new Address(null, zipcode, address, number, neighborhood, city, state);
             return new Person(name, cpf, rg, getFormattedDate(), sexEnum, mother, father, email, addressObj, homePhone, cellphone, height, weight, bloodTypeEnum);
         } catch (Exception exception) {
             throw DtoException.convert(this);
