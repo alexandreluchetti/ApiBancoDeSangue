@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -37,7 +36,7 @@ public class Controller {
     @Operation(summary = "Operacao para buscar uma lista de pessoas no banco de dados")
     public List<PersonDto> getPeople() {
         try {
-            return service.getPeopleByCpf(null);
+            return service.getPersonList();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
             throw new RuntimeException(exception);

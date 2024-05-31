@@ -45,12 +45,12 @@ public class Service {
         });
     }
 
-    public List<PersonDto> getPeopleByCpf(String cpf) {
-        return getPeople(cpf).stream().map(Person::toDto).toList();
+    public List<PersonDto> getPersonList() {
+        return getPeople().stream().map(Person::toDto).toList();
     }
 
     public Map<String, Integer> getCandidatesPerState() {
-        List<Person> people = getPeople("");
+        List<Person> people = getPeople();
         Map<String, Integer> peopleByState = new HashMap<>();
 
         for (Person person : people) {
@@ -67,7 +67,7 @@ public class Service {
     }
 
     public Map<String, Double> getAvgAgeByBloodType() {
-        List<Person> people = getPeople("");
+        List<Person> people = getPeople();
         Map<String, Double> avgAgeByBloodType = new HashMap<>(Map.of());
 
         for (BloodTypeEnum bloodType : BloodTypeEnum.values()) {
@@ -78,7 +78,7 @@ public class Service {
     }
 
     public Map<String, Double> getPercentageOverWeightPeopleBySex() {
-        List<Person> people = getPeople("");
+        List<Person> people = getPeople();
         List<Person> men = new ArrayList<>();
         List<Person> women = new ArrayList<>();
 
@@ -96,7 +96,7 @@ public class Service {
     }
 
     public Map<String, Integer> amountOfDonorsForEachBloodTypeRecipient() {
-        List<Person> people = getPeople("");
+        List<Person> people = getPeople();
         Map<String, Integer> amountOfDonorsForEachBloodTypeRecipient = new HashMap<>();
 
         for (BloodTypeEnum bloodType : BloodTypeEnum.tipos) {
@@ -110,7 +110,7 @@ public class Service {
     }
 
     public Map<String, Integer> amountOfRecipientsForEachBloodTypeDonor() {
-        List<Person> people = getPeople("");
+        List<Person> people = getPeople();
         Map<String, Integer> amountOfRecipientsForEachBloodTypeDonor = new HashMap<>();
 
         for (BloodTypeEnum bloodType : BloodTypeEnum.tipos) {
@@ -124,16 +124,9 @@ public class Service {
     }
 
     public Map<String, Double> averageBmiPerDecade() {
-        List<Person> people = getPeople("");
+        List<Person> people = getPeople();
         Map<String, Double> averageBmiPerDecade = getAvgBmi(people);
         return averageBmiPerDecade;
-    }
-
-    private List<Person> getPeople(String cpf) {
-        if (pessoasStatic == null) {
-            pessoasStatic = personRepository.getPeopleByCpf(cpf);
-        }
-        return pessoasStatic;
     }
 
     private Map<String, Double> getAvgBmi(List<Person> people) {
@@ -220,6 +213,13 @@ public class Service {
     private Double formatDouble(Double value) {
         String stringValue = DECIMAL_FORMAT.format(value).replace(",", ".");
         return Double.parseDouble(stringValue);
+    }
+
+    private List<Person> getPeople() {
+        if (pessoasStatic == null) {
+            pessoasStatic = personRepository.getPeopleByCpf(null);
+        }
+        return pessoasStatic;
     }
 
 }
