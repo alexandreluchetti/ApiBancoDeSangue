@@ -57,23 +57,6 @@ public class Person {
     @JsonAlias({"tipo_sanguineo"})
     private BloodTypeEnum bloodType;
 
-//    public Person(String name, String cpf, String rg, String birthdate, SexEnum sex, String mother, String father, String email, Endereco address, String homePhone, String cellphone, double height, double weight, TipoSanguineoEnum bloodType) {
-//        this.name = name;
-//        this.cpf = cpf;
-//        this.rg = rg;
-//        this.birthdate = birthdate;
-//        this.sex = sex;
-//        this.mother = mother;
-//        this.father = father;
-//        this.email = email;
-//        this.address = address;
-//        this.homePhone = homePhone;
-//        this.cellphone = cellphone;
-//        this.height = height;
-//        this.weight = weight;
-//        this.bloodType = bloodType;
-//    }
-
     public Person() {
         this.name = "";
         this.cpf = "";
@@ -91,18 +74,6 @@ public class Person {
         this.bloodType = BloodTypeEnum.VAZIO;
     }
 
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public String getCpf() {
-//        return cpf;
-//    }
-//
-//    public String getRg() {
-//        return rg;
-//    }
-
     public Date getFormattedDate() {
         SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
@@ -113,46 +84,6 @@ public class Person {
             throw FormatException.stringDateFormat();
         }
     }
-
-//    public SexEnum getSex() {
-//        return sex;
-//    }
-//
-//    public String getMother() {
-//        return mother;
-//    }
-//
-//    public String getFather() {
-//        return father;
-//    }
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public Endereco getAddress() {
-//        return address;
-//    }
-//
-//    public String getHomePhone() {
-//        return homePhone;
-//    }
-//
-//    public String getCellphone() {
-//        return cellphone;
-//    }
-//
-//    public double getHeight() {
-//        return height;
-//    }
-//
-//    public double getWeight() {
-//        return weight;
-//    }
-//
-//    public TipoSanguineoEnum getBloodType() {
-//        return bloodType;
-//    }
 
     public Integer getAge() {
         LocalDate now = LocalDate.now();
