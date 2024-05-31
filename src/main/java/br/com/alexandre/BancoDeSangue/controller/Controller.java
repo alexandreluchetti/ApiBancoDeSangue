@@ -22,14 +22,25 @@ public class Controller {
         this.service = service;
     }
 
+//    @PostMapping(path = "/envia/pessoas")
+//    @Operation(summary = "Operacao para enviar uma lista de pesoas para o banco de sangue")
+//    public void savePeople(@RequestBody List<PersonDto> personDtoList) {
+//        if (personDtoList == null || personDtoList.isEmpty()) {
+//            throw EmptyListException.noPersonAdded();
+//        }
+//
+//        service.peopleRegistration(personDtoList.stream().map(PersonDto::toPerson).toList());
+//    }
+
     @PostMapping(path = "/envia/pessoas")
     @Operation(summary = "Operacao para enviar uma lista de pesoas para o banco de sangue")
-    public void savePeople(@RequestBody List<PersonDto> personDtoList) {
-        if (personDtoList == null || personDtoList.isEmpty()) {
+    public void savePeople(@RequestBody PersonDto personDto) {
+        if (personDto == null) {
             throw EmptyListException.noPersonAdded();
         }
 
-        service.peopleRegistration(personDtoList.stream().map(PersonDto::toPerson).toList());
+        System.out.println(personDto);
+        service.peopleRegistration(List.of(personDto.toPerson()));
     }
 
     @GetMapping(path = "/pessoas")

@@ -94,7 +94,7 @@ public class PersonDB {
                 this.cpf,
                 this.rg,
                 this.birthdate,
-                SexEnum.getEnum(this.sex),
+                SexEnum.getEnumFromChar(this.sex),
                 this.mother,
                 this.father,
                 this.email,

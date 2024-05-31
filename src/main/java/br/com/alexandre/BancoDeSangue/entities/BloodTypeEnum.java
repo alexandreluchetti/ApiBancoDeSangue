@@ -58,7 +58,7 @@ public enum BloodTypeEnum {
 
     public static BloodTypeEnum getEnum(String value) {
         for (BloodTypeEnum tsEnum : values()) {
-            if (value.toUpperCase().contains(tsEnum.value))
+            if (value.toUpperCase().equals(tsEnum.value))
                 return tsEnum;
         }
         return VAZIO;

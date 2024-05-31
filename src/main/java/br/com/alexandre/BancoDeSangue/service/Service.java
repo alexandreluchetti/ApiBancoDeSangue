@@ -33,6 +33,7 @@ public class Service {
     public void peopleRegistration(List<Person> people) {
         people.forEach(person -> {
             try {
+                System.out.println(person);
                 this.repository.register(person);
             } catch (Exception exception) {
                 System.out.println(exception.getMessage());

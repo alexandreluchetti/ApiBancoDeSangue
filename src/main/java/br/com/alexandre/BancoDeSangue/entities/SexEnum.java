@@ -24,9 +24,15 @@ public enum SexEnum {
 
     public static SexEnum getEnum(String value) {
         for (SexEnum sexEnum : values()) {
-            if (value.toUpperCase().contains(sexEnum.value) ||
-            value.toUpperCase().contains(sexEnum.valueChar))
+            if (value.toUpperCase().equals(sexEnum.value))
                 return sexEnum;
+        }
+        return OTHER;
+    }
+
+    public static SexEnum getEnumFromChar(String value) {
+        for (SexEnum sexEnum : values()) {
+            if (value.toUpperCase().equals(sexEnum.valueChar)) return sexEnum;
         }
         return OTHER;
     }
