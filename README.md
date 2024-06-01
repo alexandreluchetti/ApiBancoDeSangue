@@ -33,7 +33,7 @@ jdbcUrl: jdbc:mysql://mysql:3306/banco_de_sangue
 # Abra a pasta raiz do projeto no terminal e execute o comando
 docker compose up
 ```
-Feito isso, será possível acessar a url `http://localhost:4200` (front-end em Angular) e `http://localhost:8080`
+Feito isso, será possível acessar a url `http://localhost:4200` (front-end em Angular) e `http://localhost:8080/swagger-ui.html`
 (Swagger - documentação da API).
 
 ---
@@ -58,7 +58,7 @@ ApiBancoDeSangue/banco_de_sangue_sql.sql
 # password: root
 ApiBancoDeSangue/src/main/resources/application.yml
 ```
-Feito isso, será possível acessar a url `http://localhost:4200` (front-end em Angular) e `http://localhost:8080`
+Feito isso, será possível acessar a url `http://localhost:4200` (front-end em Angular) e `http://localhost:8080/swagger-ui.html`
 (Swagger - documentação da API).
 
 ---
