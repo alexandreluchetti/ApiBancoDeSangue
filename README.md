@@ -1,5 +1,7 @@
 # ApiBancoDeSangue
 
+---
+
 ## Descrição
 Este é um projeto que fornece uma API para um banco de sangue. A API permite gerenciar doadores, receptores e 
 transações de sangue. Com ela, é possível registrar pessoas, buscar pessoas cadastradas, calcular a média do índice de 
@@ -7,15 +9,37 @@ massa corporal (IMC) por década de idade, consultar a quantidade de candidatos 
 obesos por sexo, calcular a média de idade por tipo sanguíneo e encontrar quantos doadores estão disponíveis para 
 cada tipo de sangue.
 
+---
+
 ## Tecnologias utilizadas
+- Java SDK versão 21
 - Jakarta EE com importações de jakarta
+- Spring Security
 - Spring Data JPA
 - Spring MVC
+- Swagger
 - Lombok
-- Java SDK versão 21
+
+---
 
 ## Instalação
-Para instalar e rodar o projeto, você precisa ter Java 21 instalado. Seguem os passos para a instalação:
+### Docker
+
+Altere o host da url de conexão ao banco de dados de `localhost` para `mysql` e execute o comando `docker compose up`;
+```bash
+# ApiBancoDeSangue/src/main/resources/application.yml 
+jdbcUrl: jdbc:mysql://mysql:3306/banco_de_sangue
+
+# Abra a pasta raiz do projeto no terminal e execute o comando
+docker compose up
+```
+Feito isso, será possível acessar a url `http://localhost:4200` (front-end em Angular) e `http://localhost:8080`
+(Swagger - documentação da API).
+
+---
+
+### Local
+Para instalar e rodar o projeto localmente, você precisa ter Java 21 instalado. Seguem os passos para a instalação:
 
 ```bash
 # clonar repositório
@@ -24,13 +48,20 @@ git clone https://github.com/alexandreluchetti/ApiBancoDeSangue.git
 # entrar na pasta raiz do projeto, abrir o concole e digitar
 mvn wrapper:wrapper
 
+# Crie a estrutura de banco de dados de acordo com o arquivo .sql na raiz do projeto
+# Se preferir, importe o arquivo no MySQL Workbench
+ApiBancoDeSangue/banco_de_sangue_sql.sql
+
 # Altere os dados de configurações de banco de dados (nome do banco, usuario e senha) no arquivo application.yml
-src/main/resources/application.yml
 # jdbcUrl: jdbc:mysql://localhost:3306/banco_de_sangue
 # username: root
 # password: root
+ApiBancoDeSangue/src/main/resources/application.yml
 ```
+Feito isso, será possível acessar a url `http://localhost:4200` (front-end em Angular) e `http://localhost:8080`
+(Swagger - documentação da API).
 
+---
 ## Operacoes
 ```bash
 # Para usar a API, a URL base é
@@ -59,9 +90,11 @@ GET - /quantidade/doadores/tiposanguineo/receptor
 POST - /envia/pessoas
 ```
 
+---
 ## Layout web
 <img src="/assets/operacoes.png">
 
+---
 ## Autor
 Alexandre Lucchetta
 
