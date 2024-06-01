@@ -1,6 +1,6 @@
 # ApiBancoDeSangue
 
----
+
 
 ## Descrição
 Este é um projeto que fornece uma API para um banco de sangue. A API permite gerenciar doadores, receptores e 
@@ -9,7 +9,7 @@ massa corporal (IMC) por década de idade, consultar a quantidade de candidatos 
 obesos por sexo, calcular a média de idade por tipo sanguíneo e encontrar quantos doadores estão disponíveis para 
 cada tipo de sangue.
 
----
+
 
 ## Tecnologias utilizadas
 - Java SDK versão 21
@@ -20,7 +20,7 @@ cada tipo de sangue.
 - Swagger
 - Lombok
 
----
+
 
 ## Instalação
 ### Docker
@@ -36,7 +36,7 @@ docker compose up
 Feito isso, será possível acessar a url `http://localhost:4200` (front-end em Angular) e `http://localhost:8080/swagger-ui.html`
 (Swagger - documentação da API).
 
----
+
 
 ### Local
 Para instalar e rodar o projeto localmente, você precisa ter Java 21 instalado. Seguem os passos para a instalação:
@@ -61,7 +61,7 @@ ApiBancoDeSangue/src/main/resources/application.yml
 Feito isso, será possível acessar a url `http://localhost:4200` (front-end em Angular) e `http://localhost:8080/swagger-ui.html`
 (Swagger - documentação da API).
 
----
+
 ## Operacoes
 ```bash
 # Para usar a API, a URL base é
@@ -90,11 +90,11 @@ GET - /quantidade/doadores/tiposanguineo/receptor
 POST - /envia/pessoas
 ```
 
----
+
 ## Layout web
 <img src="/assets/operacoes.png">
 
----
+
 ## Autor
 Alexandre Lucchetta
 
