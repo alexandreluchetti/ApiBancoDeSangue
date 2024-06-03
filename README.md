@@ -95,7 +95,7 @@ POST - /envia/pessoas
 ```
 
 
-## Layout web
+## Swagger
 <img src="/assets/operacoes.png">
 
 
