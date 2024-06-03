@@ -19,11 +19,14 @@ cada tipo de sangue.
 - Spring MVC
 - Swagger
 - Lombok
+- Docker
 
 
 
 ## Instalação
 ### Docker
+
+Imagem do projeto: `docker pull alexandreluchetti/api-banco-de-sangue:1.0.0`
 
 Altere o host da url de conexão ao banco de dados de `localhost` para `mysql` e execute o comando `docker compose up`;
 ```bash
