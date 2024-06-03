@@ -3,6 +3,9 @@
 
 
 ## Descrição
+
+Imagem do projeto: `docker pull alexandreluchetti/api-banco-de-sangue:1.0.0`
+
 Este é um projeto que fornece uma API para um banco de sangue. A API permite gerenciar doadores, receptores e 
 transações de sangue. Com ela, é possível registrar pessoas, buscar pessoas cadastradas, calcular a média do índice de 
 massa corporal (IMC) por década de idade, consultar a quantidade de candidatos por estado, calcular a percentagem de 
@@ -25,8 +28,6 @@ cada tipo de sangue.
 
 ## Instalação
 ### Docker
-
-Imagem do projeto: `docker pull alexandreluchetti/api-banco-de-sangue:1.0.0`
 
 Altere o host da url de conexão ao banco de dados de `localhost` para `mysql` e execute o comando `docker compose up`;
 ```bash
