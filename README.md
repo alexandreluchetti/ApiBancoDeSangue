@@ -15,10 +15,12 @@ cada tipo de sangue.
 
 
 ## Tecnologias utilizadas
-- Java SDK versão 21
 - Jakarta EE com importações de jakarta
+- Java SDK versão 21
+- Spring Framework
 - Spring Security
 - Spring Data JPA
+- Spring Boot
 - Spring MVC
 - Swagger
 - Lombok
