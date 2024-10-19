@@ -1,8 +1,8 @@
 package br.com.alexandre.BancoDeSangue.configuration.resources.getAbarageBMIPerDecade;
 
-import br.com.alexandre.BancoDeSangue.repositories.BancoDeSangueRepositoryImplement;
-import br.com.alexandre.BancoDeSangue.useCase.getAbarageBMIPerDecade.GetAvarageBMIPerDecadeUseCase;
-import br.com.alexandre.BancoDeSangue.useCase.getAbarageBMIPerDecade.impl.GetAvarageBMIPerDecadeUseCaseImpl;
+import br.com.alexandre.BancoDeSangue.dataprovider.BancoDeSangueRepositoryImplement;
+import br.com.alexandre.BancoDeSangue.core.useCase.getAbarageBMIPerDecade.GetAvarageBMIPerDecadeUseCase;
+import br.com.alexandre.BancoDeSangue.core.useCase.getAbarageBMIPerDecade.impl.GetAvarageBMIPerDecadeUseCaseImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

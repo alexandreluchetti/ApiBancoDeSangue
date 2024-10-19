@@ -1,8 +1,8 @@
 package br.com.alexandre.BancoDeSangue.configuration.resources.getReceptorsByDonators;
 
-import br.com.alexandre.BancoDeSangue.repositories.BancoDeSangueRepositoryImplement;
-import br.com.alexandre.BancoDeSangue.useCase.getReceptorsByDonators.GetReceptorsByDonatorsUseCase;
-import br.com.alexandre.BancoDeSangue.useCase.getReceptorsByDonators.impl.GetReceptorsByDonatorsUseCaseImpl;
+import br.com.alexandre.BancoDeSangue.dataprovider.BancoDeSangueRepositoryImplement;
+import br.com.alexandre.BancoDeSangue.core.useCase.getReceptorsByDonators.GetReceptorsByDonatorsUseCase;
+import br.com.alexandre.BancoDeSangue.core.useCase.getReceptorsByDonators.impl.GetReceptorsByDonatorsUseCaseImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,6 +1,6 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.getAbarageBMIPerDecade;
 
-import br.com.alexandre.BancoDeSangue.useCase.getAbarageBMIPerDecade.GetAvarageBMIPerDecadeUseCase;
+import br.com.alexandre.BancoDeSangue.core.useCase.getAbarageBMIPerDecade.GetAvarageBMIPerDecadeUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

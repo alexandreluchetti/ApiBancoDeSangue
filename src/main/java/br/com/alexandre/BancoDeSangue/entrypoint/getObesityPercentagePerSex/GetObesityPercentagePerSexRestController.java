@@ -1,6 +1,6 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.getObesityPercentagePerSex;
 
-import br.com.alexandre.BancoDeSangue.useCase.getObesityPercentagePerSex.GetObesityPercentagePerSexUseCase;
+import br.com.alexandre.BancoDeSangue.core.useCase.getObesityPercentagePerSex.GetObesityPercentagePerSexUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,10 +1,10 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.registerPeople.dto;
 
-import br.com.alexandre.BancoDeSangue.entities.Address;
-import br.com.alexandre.BancoDeSangue.entities.Person;
-import br.com.alexandre.BancoDeSangue.entities.SexEnum;
-import br.com.alexandre.BancoDeSangue.entities.BloodTypeEnum;
-import br.com.alexandre.BancoDeSangue.exceptions.PersonException;
+import br.com.alexandre.BancoDeSangue.core.entities.Address;
+import br.com.alexandre.BancoDeSangue.core.entities.Person;
+import br.com.alexandre.BancoDeSangue.core.entities.enums.SexEnum;
+import br.com.alexandre.BancoDeSangue.core.entities.enums.BloodTypeEnum;
+import br.com.alexandre.BancoDeSangue.configuration.exceptions.PersonException;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;

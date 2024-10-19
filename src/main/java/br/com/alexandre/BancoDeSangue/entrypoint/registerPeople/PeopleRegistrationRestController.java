@@ -1,9 +1,9 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.registerPeople;
 
-import br.com.alexandre.BancoDeSangue.entities.Person;
+import br.com.alexandre.BancoDeSangue.core.entities.Person;
 import br.com.alexandre.BancoDeSangue.entrypoint.registerPeople.dto.PersonDto;
-import br.com.alexandre.BancoDeSangue.exceptions.EmptyListException;
-import br.com.alexandre.BancoDeSangue.useCase.registerPeople.PeopleRegistrationUseCase;
+import br.com.alexandre.BancoDeSangue.configuration.exceptions.EmptyListException;
+import br.com.alexandre.BancoDeSangue.core.useCase.registerPeople.PeopleRegistrationUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

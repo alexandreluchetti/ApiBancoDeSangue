@@ -1,6 +1,6 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.getPeoplePerState;
 
-import br.com.alexandre.BancoDeSangue.useCase.getPeoplePerState.GetPeoplePerStateUseCase;
+import br.com.alexandre.BancoDeSangue.core.useCase.getPeoplePerState.GetPeoplePerStateUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

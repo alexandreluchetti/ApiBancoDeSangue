@@ -1,6 +1,6 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.getReceptorsByDonators;
 
-import br.com.alexandre.BancoDeSangue.useCase.getReceptorsByDonators.GetReceptorsByDonatorsUseCase;
+import br.com.alexandre.BancoDeSangue.core.useCase.getReceptorsByDonators.GetReceptorsByDonatorsUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

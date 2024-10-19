@@ -22,7 +22,7 @@ import javax.sql.DataSource;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "entityManager",
         transactionManagerRef = "transactionManager",
-        basePackages = {"br.com.alexandre.BancoDeSangue.repositories"}
+        basePackages = {"br.com.alexandre.BancoDeSangue.dataprovider"}
 )
 public class DatabaseConfiguration {
 
@@ -42,7 +42,7 @@ public class DatabaseConfiguration {
     ) {
         return builder
                 .dataSource(dataSource)
-                .packages("br.com.alexandre.BancoDeSangue.entities")
+                .packages("br.com.alexandre.BancoDeSangue.core.entities")
                 .persistenceUnit("entities")
                 .build();
     }
