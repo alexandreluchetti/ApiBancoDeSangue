@@ -22,17 +22,6 @@ public class Controller {
         this.service = service;
     }
 
-    @GetMapping(path = "/percentual/obesos/sexo")
-    @Operation(summary = "Operacao para buscar o percentual de obesos por sex")
-    public Map<String, Double> percentageOverWeightPeopleBySex() {
-        try {
-            return service.getPercentageOverWeightPeopleBySex();
-        } catch (Exception exception) {
-            System.out.println(exception.getMessage());
-            throw new RuntimeException(exception);
-        }
-    }
-
     @GetMapping(path = "/media/idade/tiposanguineo")
     @Operation(summary = "Operacao para buscar idade media por cada tipo sanguineo")
     public Map<String, Double> avgAgeByBloodType() {
@@ -60,17 +49,6 @@ public class Controller {
     public Map<String, Integer> amountOfRecipientsForEachBloodTypeDonor() {
         try {
             return service.amountOfRecipientsForEachBloodTypeDonor();
-        } catch (Exception exception) {
-            System.out.println(exception.getMessage());
-            throw new RuntimeException(exception);
-        }
-    }
-
-    @GetMapping(path = "/media/imc/decada")
-    @Operation(summary = "Operacao para buscar a media de IMC por cada decada")
-    public Map<String, Double> averageBmiPerDecade() {
-        try {
-            return service.averageBmiPerDecade();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
             throw new RuntimeException(exception);
