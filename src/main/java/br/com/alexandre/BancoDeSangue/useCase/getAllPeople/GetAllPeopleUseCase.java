@@ -1,4 +1,4 @@
-package br.com.alexandre.BancoDeSangue.useCase.registerPeople.getAllPeople;
+package br.com.alexandre.BancoDeSangue.useCase.getAllPeople;
 
 import br.com.alexandre.BancoDeSangue.entities.Person;
 

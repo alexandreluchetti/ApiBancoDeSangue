@@ -22,17 +22,6 @@ public class Controller {
         this.service = service;
     }
 
-    @GetMapping(path = "/pessoas/estados")
-    @Operation(summary = "Operacao para buscar a quantidade de candidatos em cada state do Brasil")
-    public Map<String, Integer> candidatesPerState() {
-        try {
-            return service.getCandidatesPerState();
-        } catch (Exception exception) {
-            System.out.println(exception.getMessage());
-            throw new RuntimeException(exception);
-        }
-    }
-
     @GetMapping(path = "/percentual/obesos/sexo")
     @Operation(summary = "Operacao para buscar o percentual de obesos por sex")
     public Map<String, Double> percentageOverWeightPeopleBySex() {

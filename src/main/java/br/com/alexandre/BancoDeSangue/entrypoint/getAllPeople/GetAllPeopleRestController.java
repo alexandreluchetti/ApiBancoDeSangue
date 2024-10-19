@@ -2,7 +2,7 @@ package br.com.alexandre.BancoDeSangue.entrypoint.getAllPeople;
 
 import br.com.alexandre.BancoDeSangue.entities.Person;
 import br.com.alexandre.BancoDeSangue.entrypoint.registerPeople.dto.PersonDto;
-import br.com.alexandre.BancoDeSangue.useCase.registerPeople.getAllPeople.GetAllPeopleUseCase;
+import br.com.alexandre.BancoDeSangue.useCase.getAllPeople.GetAllPeopleUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

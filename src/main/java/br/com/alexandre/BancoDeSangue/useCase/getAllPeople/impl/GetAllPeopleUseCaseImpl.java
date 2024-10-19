@@ -1,8 +1,8 @@
-package br.com.alexandre.BancoDeSangue.useCase.registerPeople.getAllPeople.impl;
+package br.com.alexandre.BancoDeSangue.useCase.getAllPeople.impl;
 
 import br.com.alexandre.BancoDeSangue.entities.Person;
 import br.com.alexandre.BancoDeSangue.repositories.BancoDeSangueRepositoryImplement;
-import br.com.alexandre.BancoDeSangue.useCase.registerPeople.getAllPeople.GetAllPeopleUseCase;
+import br.com.alexandre.BancoDeSangue.useCase.getAllPeople.GetAllPeopleUseCase;
 
 import java.util.List;
 
