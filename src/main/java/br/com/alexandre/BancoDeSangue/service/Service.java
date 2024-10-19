@@ -35,21 +35,6 @@ public class Service {
         return staticPeoplesList;
     }
 
-//    public void peopleRegistration(List<Person> people) {
-//        people.forEach(person -> {
-//            try {
-//                this.repository.register(person);
-//            } catch (Exception exception) {
-//                System.out.println("IMPOSSIVEL REGISTRAR PESSOA: " + exception.getMessage());
-//            }
-//        });
-//        staticPeoplesList = repository.getPeople();
-//    }
-
-    public List<PersonDto> getPersonList() {
-        return this.getPeoplesList().stream().map(Person::toDto).toList();
-    }
-
     public Map<String, Integer> getCandidatesPerState() {
         List<Person> people = this.getPeoplesList();
         Map<String, Integer> peopleByState = new HashMap<>();

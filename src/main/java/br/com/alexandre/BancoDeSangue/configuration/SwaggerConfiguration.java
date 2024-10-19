@@ -3,6 +3,7 @@ package br.com.alexandre.BancoDeSangue.configuration;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -31,7 +32,14 @@ public class SwaggerConfiguration {
                 .description(description + "\n\nHost: " + hostName);
 
         return new OpenAPI().info(info);
-
     }
+
+//    @Bean
+//    public GroupedOpenApi groupedOpenApi() {
+//        return GroupedOpenApi.builder()
+//                .group(name)
+//                .packagesToScan("br.com.alexandre.BancoDeSangue.useCase.registerPeople")
+//                .build();
+//    }
 
 }

@@ -22,27 +22,6 @@ public class Controller {
         this.service = service;
     }
 
-//    @PostMapping(path = "/envia/pessoa")
-//    @Operation(summary = "Operacao para enviar uma pessoa para o banco de dados")
-//    public void savePerson(@RequestBody PersonDto personDto) {
-//        if (personDto == null) {
-//            throw EmptyListException.noPersonAdded();
-//        }
-//
-//        service.peopleRegistration(List.of(personDto.toPerson()));
-//    }
-
-    @GetMapping(path = "/pessoas")
-    @Operation(summary = "Operacao para buscar uma lista de pessoas no banco de dados")
-    public List<PersonDto> getPeople() {
-        try {
-            return service.getPersonList();
-        } catch (Exception exception) {
-            System.out.println(exception.getMessage());
-            throw new RuntimeException(exception);
-        }
-    }
-
     @GetMapping(path = "/pessoas/estados")
     @Operation(summary = "Operacao para buscar a quantidade de candidatos em cada state do Brasil")
     public Map<String, Integer> candidatesPerState() {
