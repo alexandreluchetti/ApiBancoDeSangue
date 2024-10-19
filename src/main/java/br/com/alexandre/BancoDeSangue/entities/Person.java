@@ -1,6 +1,6 @@
 package br.com.alexandre.BancoDeSangue.entities;
 
-import br.com.alexandre.BancoDeSangue.controller.dto.PersonDto;
+import br.com.alexandre.BancoDeSangue.entrypoint.registerPeople.dto.PersonDto;
 import br.com.alexandre.BancoDeSangue.exceptions.FormatException;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.AllArgsConstructor;

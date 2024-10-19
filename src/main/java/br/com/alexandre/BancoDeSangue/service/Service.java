@@ -1,6 +1,6 @@
 package br.com.alexandre.BancoDeSangue.service;
 
-import br.com.alexandre.BancoDeSangue.controller.dto.PersonDto;
+import br.com.alexandre.BancoDeSangue.entrypoint.registerPeople.dto.PersonDto;
 import br.com.alexandre.BancoDeSangue.entities.BloodTypeEnum;
 import br.com.alexandre.BancoDeSangue.entities.Person;
 import br.com.alexandre.BancoDeSangue.repositories.BancoDeSangueRepositoryImplement;
@@ -35,16 +35,16 @@ public class Service {
         return staticPeoplesList;
     }
 
-    public void peopleRegistration(List<Person> people) {
-        people.forEach(person -> {
-            try {
-                this.repository.register(person);
-            } catch (Exception exception) {
-                System.out.println("IMPOSSIVEL REGISTRAR PESSOA: " + exception.getMessage());
-            }
-        });
-        staticPeoplesList = repository.getPeople();
-    }
+//    public void peopleRegistration(List<Person> people) {
+//        people.forEach(person -> {
+//            try {
+//                this.repository.register(person);
+//            } catch (Exception exception) {
+//                System.out.println("IMPOSSIVEL REGISTRAR PESSOA: " + exception.getMessage());
+//            }
+//        });
+//        staticPeoplesList = repository.getPeople();
+//    }
 
     public List<PersonDto> getPersonList() {
         return this.getPeoplesList().stream().map(Person::toDto).toList();

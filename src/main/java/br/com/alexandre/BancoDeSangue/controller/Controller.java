@@ -1,6 +1,6 @@
 package br.com.alexandre.BancoDeSangue.controller;
 
-import br.com.alexandre.BancoDeSangue.controller.dto.PersonDto;
+import br.com.alexandre.BancoDeSangue.entrypoint.registerPeople.dto.PersonDto;
 import br.com.alexandre.BancoDeSangue.exceptions.EmptyListException;
 import br.com.alexandre.BancoDeSangue.service.Service;
 import io.swagger.v3.oas.annotations.Operation;
@@ -22,25 +22,15 @@ public class Controller {
         this.service = service;
     }
 
-    @PostMapping(path = "/envia/pessoas")
-    @Operation(summary = "Operacao para enviar uma lista de pessoas para o banco de dados")
-    public void savePeople(@RequestBody List<PersonDto> personDtoList) {
-        if (personDtoList == null || personDtoList.isEmpty()) {
-            throw EmptyListException.noPersonAdded();
-        }
-
-        service.peopleRegistration(personDtoList.stream().map(PersonDto::toPerson).toList());
-    }
-
-    @PostMapping(path = "/envia/pessoa")
-    @Operation(summary = "Operacao para enviar uma pessoa para o banco de dados")
-    public void savePerson(@RequestBody PersonDto personDto) {
-        if (personDto == null) {
-            throw EmptyListException.noPersonAdded();
-        }
-
-        service.peopleRegistration(List.of(personDto.toPerson()));
-    }
+//    @PostMapping(path = "/envia/pessoa")
+//    @Operation(summary = "Operacao para enviar uma pessoa para o banco de dados")
+//    public void savePerson(@RequestBody PersonDto personDto) {
+//        if (personDto == null) {
+//            throw EmptyListException.noPersonAdded();
+//        }
+//
+//        service.peopleRegistration(List.of(personDto.toPerson()));
+//    }
 
     @GetMapping(path = "/pessoas")
     @Operation(summary = "Operacao para buscar uma lista de pessoas no banco de dados")

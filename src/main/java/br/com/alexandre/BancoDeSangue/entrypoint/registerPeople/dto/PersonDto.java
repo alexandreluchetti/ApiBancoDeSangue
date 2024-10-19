@@ -1,4 +1,4 @@
-package br.com.alexandre.BancoDeSangue.controller.dto;
+package br.com.alexandre.BancoDeSangue.entrypoint.registerPeople.dto;
 
 import br.com.alexandre.BancoDeSangue.entities.Address;
 import br.com.alexandre.BancoDeSangue.entities.Person;
