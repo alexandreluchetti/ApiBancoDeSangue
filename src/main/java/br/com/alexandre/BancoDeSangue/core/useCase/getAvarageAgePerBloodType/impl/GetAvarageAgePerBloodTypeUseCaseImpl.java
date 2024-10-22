@@ -19,7 +19,7 @@ public class GetAvarageAgePerBloodTypeUseCaseImpl implements GetAvarageAgePerBlo
     }
 
     @Override
-    public AvarageAgePerBloodTypeResponseDto getAvgAgeByBloodType() {
+    public Map<String, Double> getAvgAgeByBloodType() {
         List<Person> people = repository.getPeople();
         Map<String, Double> avgAgeByBloodType = new HashMap<>();
 
@@ -27,7 +27,7 @@ public class GetAvarageAgePerBloodTypeUseCaseImpl implements GetAvarageAgePerBlo
             avgAgeByBloodType.put(bloodType.getValue(), getAvgAge(bloodType, people));
         }
 
-        return new AvarageAgePerBloodTypeResponseDto(avgAgeByBloodType);
+        return avgAgeByBloodType;
     }
 
     private Double getAvgAge(BloodTypeEnum bloodType, List<Person> people) {

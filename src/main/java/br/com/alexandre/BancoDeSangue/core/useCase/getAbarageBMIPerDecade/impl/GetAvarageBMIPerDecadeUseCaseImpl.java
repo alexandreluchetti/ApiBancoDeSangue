@@ -56,7 +56,6 @@ public class GetAvarageBMIPerDecadeUseCaseImpl implements GetAvarageBMIPerDecade
         for (Person person : people) {
             char[] charArray = String.valueOf(person.getAge()).toCharArray();
 
-            String decadeName = "";
             int firstNumber = Integer.parseInt(String.valueOf(charArray[0]));
             int secondNumber;
             if (String.valueOf(charArray[1]).equals("0")) {
@@ -67,7 +66,7 @@ public class GetAvarageBMIPerDecadeUseCaseImpl implements GetAvarageBMIPerDecade
                 secondNumber = firstNumber + 9;
             }
 
-            decadeName = firstNumber + " a " + secondNumber;
+            String decadeName = firstNumber + " a " + secondNumber;
             decadesNameMap.put(decadeName, 0.0);
         }
         return decadesNameMap;

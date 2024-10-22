@@ -26,6 +26,6 @@ public class GetAvarageAgePerBloodTypeRestController {
     @GetMapping(path = "/media/idade/tiposanguineo")
     @Operation(summary = "Operacao para buscar idade media por cada tipo sanguineo")
     public ResponseEntity<AvarageAgePerBloodTypeResponseDto> avgAgeByBloodType() {
-        return ResponseEntity.ok(useCase.getAvgAgeByBloodType());
+        return ResponseEntity.ok(new AvarageAgePerBloodTypeResponseDto(useCase.getAvgAgeByBloodType()));
     }
 }
