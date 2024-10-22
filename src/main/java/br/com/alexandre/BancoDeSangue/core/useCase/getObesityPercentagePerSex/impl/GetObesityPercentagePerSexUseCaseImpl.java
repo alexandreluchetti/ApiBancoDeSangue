@@ -36,12 +36,10 @@ public class GetObesityPercentagePerSexUseCaseImpl implements GetObesityPercenta
             else women.add(person);
         });
 
-        Map<String, Double> map = new HashMap<>(Map.of(
+        return new HashMap<>(Map.of(
                 MALE.getValue(), getAvgPercentage(men),
                 FEMALE.getValue(), getAvgPercentage(women)
         ));
-
-        return map;
     }
 
     private Double getAvgPercentage(List<Person> people) {
