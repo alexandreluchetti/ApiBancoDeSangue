@@ -43,6 +43,8 @@ public class GetObesityPercentagePerSexUseCaseImpl implements GetObesityPercenta
     }
 
     private Double getAvgPercentage(List<Person> people) {
+        if (people.isEmpty()) return 0.0;
+
         AtomicInteger overWeights = new AtomicInteger();
         people.forEach(person -> {
             if (person.getImc() > IMC_30) overWeights.getAndIncrement();

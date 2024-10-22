@@ -1,7 +1,6 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.getAvarageBMIPerDecade;
 
 import br.com.alexandre.BancoDeSangue.core.useCase.getAbarageBMIPerDecade.GetAvarageBMIPerDecadeUseCase;
-import br.com.alexandre.BancoDeSangue.entrypoint.getAvarageBMIPerDecade.dto.AvarageBMIPerDecadeResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
@@ -25,7 +24,7 @@ public class GetAvarageBMIPerDecadeRestController {
 
     @GetMapping(path = "/media/imc/decada")
     @Operation(summary = "Operacao para buscar a media de IMC por cada decada")
-    public ResponseEntity<AvarageBMIPerDecadeResponseDto> averageBmiPerDecade() {
-        return ResponseEntity.ok(new AvarageBMIPerDecadeResponseDto(useCase.getAvarageBMIPerDacade()));
+    public ResponseEntity<Map<String, Double>> averageBmiPerDecade() {
+        return ResponseEntity.ok(useCase.getAvarageBMIPerDacade());
     }
 }

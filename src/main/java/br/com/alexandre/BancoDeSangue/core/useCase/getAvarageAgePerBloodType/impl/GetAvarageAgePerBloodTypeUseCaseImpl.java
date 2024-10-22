@@ -1,10 +1,9 @@
 package br.com.alexandre.BancoDeSangue.core.useCase.getAvarageAgePerBloodType.impl;
 
-import br.com.alexandre.BancoDeSangue.core.entities.enums.BloodTypeEnum;
 import br.com.alexandre.BancoDeSangue.core.entities.Person;
-import br.com.alexandre.BancoDeSangue.dataprovider.BancoDeSangueRepositoryImplement;
+import br.com.alexandre.BancoDeSangue.core.entities.enums.BloodTypeEnum;
 import br.com.alexandre.BancoDeSangue.core.useCase.getAvarageAgePerBloodType.GetAvarageAgePerBloodTypeUseCase;
-import br.com.alexandre.BancoDeSangue.entrypoint.getAvarageAgePerBloodType.dto.AvarageAgePerBloodTypeResponseDto;
+import br.com.alexandre.BancoDeSangue.dataprovider.BancoDeSangueRepositoryImplement;
 
 import java.util.HashMap;
 import java.util.List;

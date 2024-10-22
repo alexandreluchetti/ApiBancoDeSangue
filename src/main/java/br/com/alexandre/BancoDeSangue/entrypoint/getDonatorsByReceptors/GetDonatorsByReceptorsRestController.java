@@ -1,7 +1,6 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.getDonatorsByReceptors;
 
 import br.com.alexandre.BancoDeSangue.core.useCase.getDonatorsByReceptors.GetDonatorsByReceptorsUseCase;
-import br.com.alexandre.BancoDeSangue.entrypoint.getDonatorsByReceptors.dto.DonatorsByReceptorsResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
@@ -25,8 +24,8 @@ public class GetDonatorsByReceptorsRestController {
 
     @GetMapping(path = "/quantidade/doadores/tiposanguineo/receptor")
     @Operation(summary = "Operacao para buscar a quantidade de doadores para cada tipo sanguineo receptor")
-    public ResponseEntity<DonatorsByReceptorsResponseDto> amountOfDonorsForEachBloodTypeRecipient() {
-        return ResponseEntity.ok(new DonatorsByReceptorsResponseDto(useCase.amountOfDonorsForEachBloodTypeRecipient()));
+    public ResponseEntity<Map<String, Integer>> amountOfDonorsForEachBloodTypeRecipient() {
+        return ResponseEntity.ok(useCase.amountOfDonorsForEachBloodTypeRecipient());
     }
 
 }

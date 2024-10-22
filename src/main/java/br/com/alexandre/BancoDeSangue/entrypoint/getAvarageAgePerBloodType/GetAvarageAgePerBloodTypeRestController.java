@@ -1,7 +1,6 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.getAvarageAgePerBloodType;
 
 import br.com.alexandre.BancoDeSangue.core.useCase.getAvarageAgePerBloodType.GetAvarageAgePerBloodTypeUseCase;
-import br.com.alexandre.BancoDeSangue.entrypoint.getAvarageAgePerBloodType.dto.AvarageAgePerBloodTypeResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
@@ -25,7 +24,7 @@ public class GetAvarageAgePerBloodTypeRestController {
 
     @GetMapping(path = "/media/idade/tiposanguineo")
     @Operation(summary = "Operacao para buscar idade media por cada tipo sanguineo")
-    public ResponseEntity<AvarageAgePerBloodTypeResponseDto> avgAgeByBloodType() {
-        return ResponseEntity.ok(new AvarageAgePerBloodTypeResponseDto(useCase.getAvgAgeByBloodType()));
+    public ResponseEntity<Map<String, Double>> avgAgeByBloodType() {
+        return ResponseEntity.ok(useCase.getAvgAgeByBloodType());
     }
 }

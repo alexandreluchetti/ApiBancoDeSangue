@@ -1,7 +1,6 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.getObesityPercentagePerSex;
 
 import br.com.alexandre.BancoDeSangue.core.useCase.getObesityPercentagePerSex.GetObesityPercentagePerSexUseCase;
-import br.com.alexandre.BancoDeSangue.entrypoint.getObesityPercentagePerSex.dto.ObesityPercentagePerSexResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
@@ -25,7 +24,7 @@ public class GetObesityPercentagePerSexRestController {
 
     @GetMapping(path = "/percentual/obesos/sexo")
     @Operation(summary = "Operacao para buscar o percentual de obesos por sexo")
-    public ResponseEntity<ObesityPercentagePerSexResponseDto> percentageOverWeightPeopleBySex() {
-        return ResponseEntity.ok(new ObesityPercentagePerSexResponseDto(useCase.getObesityPercentagePerSex()));
+    public ResponseEntity<Map<String, Double>> percentageOverWeightPeopleBySex() {
+        return ResponseEntity.ok(useCase.getObesityPercentagePerSex());
     }
 }

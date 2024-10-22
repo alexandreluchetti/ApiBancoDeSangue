@@ -1,7 +1,6 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.getPeoplePerState;
 
 import br.com.alexandre.BancoDeSangue.core.useCase.getPeoplePerState.GetPeoplePerStateUseCase;
-import br.com.alexandre.BancoDeSangue.entrypoint.getPeoplePerState.dto.PeoplePerStateResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
@@ -25,7 +24,7 @@ public class GetPeoplePerStateRestController {
 
     @GetMapping(path = "/pessoas/estados")
     @Operation(summary = "Operacao para buscar a quantidade de candidatos em cada state do Brasil")
-    public ResponseEntity<PeoplePerStateResponseDto> candidatesPerState() {
-        return ResponseEntity.ok(new PeoplePerStateResponseDto(useCase.getPeoplePerState()));
+    public ResponseEntity<Map<String, Integer>> candidatesPerState() {
+        return ResponseEntity.ok(useCase.getPeoplePerState());
     }
 }
