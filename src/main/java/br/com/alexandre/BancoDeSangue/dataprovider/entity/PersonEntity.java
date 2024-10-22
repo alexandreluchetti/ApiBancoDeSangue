@@ -1,5 +1,6 @@
-package br.com.alexandre.BancoDeSangue.core.entities;
+package br.com.alexandre.BancoDeSangue.dataprovider.entity;
 
+import br.com.alexandre.BancoDeSangue.core.entities.Person;
 import br.com.alexandre.BancoDeSangue.core.entities.enums.BloodTypeEnum;
 import br.com.alexandre.BancoDeSangue.core.entities.enums.SexEnum;
 import com.fasterxml.jackson.annotation.JsonAlias;
@@ -12,7 +13,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @Entity(name = "Pessoa")
-public class PersonDB {
+public class PersonEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,7 +52,7 @@ public class PersonDB {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "endereco_id")
     @JsonAlias({"address"})
-    private Address address;
+    private AddressEntity addressEntity;
 
     @Column(name = "telefoneFixo")
     @JsonAlias({"telefone_fixo"})
@@ -73,7 +74,7 @@ public class PersonDB {
     @JsonAlias({"tipo_sanguineo"})
     private String bloodType;
 
-    public PersonDB() {
+    public PersonEntity() {
         this.name = "";
         this.cpf = "";
         this.rg = "";
@@ -82,7 +83,7 @@ public class PersonDB {
         this.mother = "";
         this.father = "";
         this.email = "";
-        this.address = new Address();
+        this.addressEntity = new AddressEntity();
         this.homePhone = "";
         this.cellphone = "";
         this.height = 0.0;
@@ -90,29 +91,17 @@ public class PersonDB {
         this.bloodType = "";
     }
 
-    private String formattCpf() {
-        if (this.cpf.length() == 11) {
-            return  (this.cpf.substring(0, 3) + "." +
-                    this.cpf.substring(3, 6) + "." +
-                    this.cpf.substring(6, 9) + "-" +
-                    this.cpf.substring(9))
-                    .trim();
-        } else {
-            return this.cpf;
-        }
-    }
-
-    public Person toPerson() {
+    public Person toObject() {
         return new Person(
                 this.name,
-                this.formattCpf(),
+                this.cpf,
                 this.rg,
                 this.birthdate,
                 SexEnum.getEnumFromChar(this.sex),
                 this.mother,
                 this.father,
                 this.email,
-                this.address,
+                this.addressEntity.toObject(),
                 this.homePhone,
                 this.cellphone,
                 this.height,

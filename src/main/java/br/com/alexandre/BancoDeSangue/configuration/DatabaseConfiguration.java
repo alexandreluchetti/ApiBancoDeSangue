@@ -42,7 +42,7 @@ public class DatabaseConfiguration {
     ) {
         return builder
                 .dataSource(dataSource)
-                .packages("br.com.alexandre.BancoDeSangue.core.entities")
+                .packages("br.com.alexandre.BancoDeSangue.dataprovider.entity")
                 .persistenceUnit("entities")
                 .build();
     }

@@ -1,46 +1,48 @@
 package br.com.alexandre.BancoDeSangue.core.entities;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
-@Setter
-@Getter
-@AllArgsConstructor
-@Entity(name = "Endereco")
 public class Address {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
-    @Column(name = "cep")
     private String cep;
-
-    @Column(name = "endereco")
     private String address;
-
-    @Column(name = "numero")
     private Integer number;
-
-    @Column(name = "bairro")
     private String neighborhood;
-
-    @Column(name = "cidade")
     private String city;
-
-    @Column(name = "estado")
     private String state;
 
+    public Address(String cep, String address, Integer number, String neighborhood, String city, String state) {
+        this.cep = cep;
+        this.address = address;
+        this.number = number;
+        this.neighborhood = neighborhood;
+        this.city = city;
+        this.state = state;
+    }
+
     public Address() {
-        this.cep = "";
-        this.address = "";
-        this.number = -1;
-        this.neighborhood = "";
-        this.city = "";
-        this.state = "";
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public String getNeighborhood() {
+        return neighborhood;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
     }
 
     @Override

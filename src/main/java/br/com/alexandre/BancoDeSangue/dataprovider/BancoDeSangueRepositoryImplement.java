@@ -3,7 +3,7 @@ package br.com.alexandre.BancoDeSangue.dataprovider;
 import br.com.alexandre.BancoDeSangue.configuration.exceptions.EmptyListException;
 import br.com.alexandre.BancoDeSangue.configuration.exceptions.PersonException;
 import br.com.alexandre.BancoDeSangue.core.entities.Person;
-import br.com.alexandre.BancoDeSangue.core.entities.PersonDB;
+import br.com.alexandre.BancoDeSangue.dataprovider.entity.PersonEntity;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class BancoDeSangueRepositoryImplement {
     @Transactional
     public List<Person> getPeople() {
         try {
-            return this.repository.getPeople(null).stream().map(PersonDB::toPerson).toList();
+            return this.repository.getPeople(null).stream().map(PersonEntity::toObject).toList();
         } catch (Exception exception) {
             throw EmptyListException.noPersonFound();
         }

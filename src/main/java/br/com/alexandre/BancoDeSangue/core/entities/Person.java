@@ -1,23 +1,19 @@
 package br.com.alexandre.BancoDeSangue.core.entities;
 
+import br.com.alexandre.BancoDeSangue.configuration.exceptions.FormatException;
 import br.com.alexandre.BancoDeSangue.core.entities.enums.BloodTypeEnum;
 import br.com.alexandre.BancoDeSangue.core.entities.enums.SexEnum;
 import br.com.alexandre.BancoDeSangue.entrypoint.registerPeople.dto.PersonDto;
-import br.com.alexandre.BancoDeSangue.configuration.exceptions.FormatException;
 import com.fasterxml.jackson.annotation.JsonAlias;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-@Setter
-@Getter
-@AllArgsConstructor
 public class Person {
 
     @JsonAlias({"name"})
@@ -59,21 +55,86 @@ public class Person {
     @JsonAlias({"tipo_sanguineo"})
     private BloodTypeEnum bloodType;
 
-    public Person() {
-        this.name = "";
-        this.cpf = "";
-        this.rg = "";
-        this.birthdate = "";
-        this.sex = SexEnum.OTHER;
-        this.mother = "";
-        this.father = "";
-        this.email = "";
-        this.address = new Address();
-        this.homePhone = "";
-        this.cellphone = "";
-        this.height = 0.0;
-        this.weight = 0.0;
-        this.bloodType = BloodTypeEnum.VAZIO;
+    public Person(String name, String cpf, String rg, String birthdate, SexEnum sex, String mother, String father, String email, Address address, String homePhone, String cellphone, double height, double weight, BloodTypeEnum bloodType) {
+        this.name = name;
+        this.cpf = formatCpf(cpf);
+        this.rg = rg;
+        this.birthdate = birthdate;
+        this.sex = sex;
+        this.mother = mother;
+        this.father = father;
+        this.email = email;
+        this.address = address;
+        this.homePhone = homePhone;
+        this.cellphone = cellphone;
+        this.height = height;
+        this.weight = weight;
+        this.bloodType = bloodType;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public String getBirthdate() {
+        return birthdate;
+    }
+
+    public SexEnum getSex() {
+        return sex;
+    }
+
+    public String getMother() {
+        return mother;
+    }
+
+    public String getFather() {
+        return father;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public String getHomePhone() {
+        return homePhone;
+    }
+
+    public String getCellphone() {
+        return cellphone;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public BloodTypeEnum getBloodType() {
+        return bloodType;
+    }
+
+    private String formatCpf(String cpf) {
+        Pattern pattern = Pattern.compile("(\\d{3})(\\d{3})(\\d{3})(\\d{2})");
+        Matcher matcher = pattern.matcher(cpf);
+        if (matcher.matches()) {
+            return String.format("%s.%s.%s-%s", matcher.group(1), matcher.group(2), matcher.group(3), matcher.group(4));
+        }
+        return cpf;
     }
 
     public Date getFormattedDate() {

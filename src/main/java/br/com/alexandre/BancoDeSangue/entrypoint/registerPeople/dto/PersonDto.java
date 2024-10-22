@@ -1,6 +1,7 @@
 package br.com.alexandre.BancoDeSangue.entrypoint.registerPeople.dto;
 
 import br.com.alexandre.BancoDeSangue.core.entities.Address;
+import br.com.alexandre.BancoDeSangue.dataprovider.entity.AddressEntity;
 import br.com.alexandre.BancoDeSangue.core.entities.Person;
 import br.com.alexandre.BancoDeSangue.core.entities.enums.SexEnum;
 import br.com.alexandre.BancoDeSangue.core.entities.enums.BloodTypeEnum;
@@ -90,7 +91,7 @@ public record PersonDto(
         @JsonProperty("tipo_sanguineo")
         @JsonAlias({"tipo_sanguineo"})
         @Schema(example = "A+", required = true)
-        String bloodType //tipo_sanguineo
+        String bloodType
 
 ) {
 
@@ -98,8 +99,8 @@ public record PersonDto(
         try {
             SexEnum sexEnum = SexEnum.getEnum(sex);
             BloodTypeEnum bloodTypeEnum = BloodTypeEnum.getEnum(bloodType);
-            Address addressObj = new Address(null, zipcode, address, number, neighborhood, city, state);
-            return new Person(name, cpf, rg, getFormattedDate(), sexEnum, mother, father, email, addressObj, homePhone, cellphone, height, weight, bloodTypeEnum);
+            Address address = new Address(zipcode, this.address, number, neighborhood, city, state);
+            return new Person(name, cpf, rg, getFormattedDate(), sexEnum, mother, father, email, address, homePhone, cellphone, height, weight, bloodTypeEnum);
         } catch (Exception exception) {
             throw PersonException.convert(this);
         }

@@ -1,6 +1,6 @@
 package br.com.alexandre.BancoDeSangue.dataprovider;
 
-import br.com.alexandre.BancoDeSangue.core.entities.PersonDB;
+import br.com.alexandre.BancoDeSangue.dataprovider.entity.PersonEntity;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.query.Procedure;
@@ -10,13 +10,13 @@ import java.sql.Date;
 import java.util.List;
 
 @Repository
-public interface BancoDeSangueRepository extends JpaRepository<PersonDB, Long> {
+public interface BancoDeSangueRepository extends JpaRepository<PersonEntity, Long> {
 
     @Transactional
     @Procedure(value = "banco_de_sangue.busca_pessoa_por_cpf")
-    List<PersonDB> getPeople(String cpf);
+    List<PersonEntity> getPeople(String cpf);
 
-    PersonDB findPeopleByCpf(String cpf);
+    PersonEntity findPeopleByCpf(String cpf);
 
     @Procedure(value = "banco_de_sangue.registra_pessoa_prc")
     void register(
