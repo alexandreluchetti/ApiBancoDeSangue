@@ -4,6 +4,7 @@ import br.com.alexandre.BancoDeSangue.core.entities.Person;
 import br.com.alexandre.BancoDeSangue.entrypoint.registerPeople.dto.PersonDto;
 import br.com.alexandre.BancoDeSangue.core.useCase.getAllPeople.GetAllPeopleUseCase;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Tag(name = "Banco de Sangue")
 @RestController
 @RequestMapping(value = "/v1/bancodesangue", produces = MediaType.APPLICATION_JSON_VALUE)
 public class GetAllPeopleRestController {

@@ -5,6 +5,7 @@ import br.com.alexandre.BancoDeSangue.entrypoint.registerPeople.dto.PersonDto;
 import br.com.alexandre.BancoDeSangue.configuration.exceptions.EmptyListException;
 import br.com.alexandre.BancoDeSangue.core.useCase.registerPeople.PeopleRegistrationUseCase;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Tag(name = "Banco de Sangue")
 @RestController
 @RequestMapping(value = "/v1/bancodesangue", produces = MediaType.APPLICATION_JSON_VALUE)
 public class PeopleRegistrationRestController {
