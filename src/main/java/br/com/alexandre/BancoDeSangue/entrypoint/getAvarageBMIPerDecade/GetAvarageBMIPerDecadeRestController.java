@@ -1,4 +1,4 @@
-package br.com.alexandre.BancoDeSangue.entrypoint.getAbarageBMIPerDecade;
+package br.com.alexandre.BancoDeSangue.entrypoint.getAvarageBMIPerDecade;
 
 import br.com.alexandre.BancoDeSangue.core.useCase.getAbarageBMIPerDecade.GetAvarageBMIPerDecadeUseCase;
 import io.swagger.v3.oas.annotations.Operation;

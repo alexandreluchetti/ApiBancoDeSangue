@@ -4,6 +4,7 @@ import br.com.alexandre.BancoDeSangue.core.entities.enums.BloodTypeEnum;
 import br.com.alexandre.BancoDeSangue.core.entities.Person;
 import br.com.alexandre.BancoDeSangue.dataprovider.BancoDeSangueRepositoryImplement;
 import br.com.alexandre.BancoDeSangue.core.useCase.getAvarageAgePerBloodType.GetAvarageAgePerBloodTypeUseCase;
+import br.com.alexandre.BancoDeSangue.entrypoint.getAvarageAgePerBloodType.dto.AvarageAgePerBloodTypeResponseDto;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,15 +19,15 @@ public class GetAvarageAgePerBloodTypeUseCaseImpl implements GetAvarageAgePerBlo
     }
 
     @Override
-    public Map<String, Double> getAvgAgeByBloodType() {
+    public AvarageAgePerBloodTypeResponseDto getAvgAgeByBloodType() {
         List<Person> people = repository.getPeople();
-        Map<String, Double> avgAgeByBloodType = new HashMap<>(Map.of());
+        Map<String, Double> avgAgeByBloodType = new HashMap<>();
 
         for (BloodTypeEnum bloodType : BloodTypeEnum.values()) {
             avgAgeByBloodType.put(bloodType.getValue(), getAvgAge(bloodType, people));
         }
 
-        return avgAgeByBloodType;
+        return new AvarageAgePerBloodTypeResponseDto(avgAgeByBloodType);
     }
 
     private Double getAvgAge(BloodTypeEnum bloodType, List<Person> people) {

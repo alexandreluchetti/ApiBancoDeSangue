@@ -1,7 +1,7 @@
 package br.com.alexandre.BancoDeSangue.core.useCase.getAvarageAgePerBloodType;
 
-import java.util.Map;
+import br.com.alexandre.BancoDeSangue.entrypoint.getAvarageAgePerBloodType.dto.AvarageAgePerBloodTypeResponseDto;
 
 public interface GetAvarageAgePerBloodTypeUseCase {
-    Map<String, Double> getAvgAgeByBloodType();
+    AvarageAgePerBloodTypeResponseDto getAvgAgeByBloodType();
 }

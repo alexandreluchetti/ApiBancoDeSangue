@@ -12,8 +12,7 @@ public enum BloodTypeEnum {
     AB_POSITIVE("AB+"),
     AB_NEGATIVE("AB-"),
     O_POSITIVE("O+"),
-    O_NEGATIVE("O-"),
-    VAZIO("EMPTY");
+    O_NEGATIVE("O-");
 
     public static final List<BloodTypeEnum> tipos = List.of(
             A_POSITIVE, A_NEGATIVE, B_POSITIVE, B_NEGATIVE, AB_POSITIVE, AB_NEGATIVE, O_POSITIVE, O_NEGATIVE);
@@ -61,7 +60,7 @@ public enum BloodTypeEnum {
             if (value.toUpperCase().equals(tsEnum.value))
                 return tsEnum;
         }
-        return VAZIO;
+        return null;
     }
 
 }
