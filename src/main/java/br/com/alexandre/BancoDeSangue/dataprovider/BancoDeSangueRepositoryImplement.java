@@ -1,21 +1,17 @@
 package br.com.alexandre.BancoDeSangue.dataprovider;
 
-import br.com.alexandre.BancoDeSangue.core.entities.Person;
-import br.com.alexandre.BancoDeSangue.core.entities.PersonDB;
 import br.com.alexandre.BancoDeSangue.configuration.exceptions.EmptyListException;
 import br.com.alexandre.BancoDeSangue.configuration.exceptions.PersonException;
+import br.com.alexandre.BancoDeSangue.core.entities.Person;
+import br.com.alexandre.BancoDeSangue.core.entities.PersonDB;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public class BancoDeSangueRepositoryImplement {
 
     private final BancoDeSangueRepository repository;
 
-    @Autowired
     public BancoDeSangueRepositoryImplement(BancoDeSangueRepository repository) {
         this.repository = repository;
     }
