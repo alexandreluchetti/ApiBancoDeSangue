@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.alexandre</groupId>
 	<artifactId>BancoDeSangue</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>BancoDeSangue</name>
 	<description>API de banco de sangue</description>
 	<properties>
