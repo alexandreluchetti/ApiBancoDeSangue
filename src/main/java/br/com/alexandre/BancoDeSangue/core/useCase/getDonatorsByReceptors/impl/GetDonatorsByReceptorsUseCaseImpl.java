@@ -36,7 +36,7 @@ public class GetDonatorsByReceptorsUseCaseImpl implements GetDonatorsByReceptors
         int amount = 0;
         for (BloodTypeEnum bloodType : bloodTypes) {
             for (Person person : people) {
-                if (person.getBloodType() == bloodType) amount++;
+                if (person.getBloodType() == bloodType && person.canDonateBlood()) amount++;
             }
         }
         return amount;

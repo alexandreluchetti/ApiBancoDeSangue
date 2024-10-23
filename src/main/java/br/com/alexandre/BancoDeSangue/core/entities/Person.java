@@ -148,6 +148,14 @@ public class Person {
         }
     }
 
+    public boolean canDonateBlood() {
+        int age = this.getAge();
+        if (age >= 16 && age <= 69) {
+            return this.weight > 50;
+        }
+        return false;
+    }
+
     public Integer getAge() {
         LocalDate now = LocalDate.now();
         LocalDate birthdate = getFormattedDate().toLocalDate();

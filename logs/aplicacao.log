@@ -213,3 +213,235 @@
 2024-10-23 19:18:42 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'entities'
 2024-10-23 19:18:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2024-10-23 19:18:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-23 19:19:40 [main] INFO  b.c.a.B.BancoDeSangueApplication - Starting BancoDeSangueApplication using Java 21.0.5 with PID 8784 (/home/lucchetta/projects/ApiBancoDeSangue/target/classes started by lucchetta in /home/lucchetta/projects/ApiBancoDeSangue)
+2024-10-23 19:19:40 [main] INFO  b.c.a.B.BancoDeSangueApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-23 19:19:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-23 19:19:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 263 ms. Found 1 JPA repository interfaces.
+2024-10-23 19:19:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-23 19:19:54 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:19:54 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-23 19:19:54 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-10-23 19:19:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 19:19:55 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 13738 ms
+2024-10-23 19:20:00 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: entities]
+2024-10-23 19:20:00 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-10-23 19:20:00 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-23 19:20:07 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-23 19:20:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-23 19:20:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54687fd0
+2024-10-23 19:20:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-23 19:20:12 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-23 19:20:17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-23 19:20:17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:20:18 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-23 19:20:23 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-23 19:20:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:20:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-23 19:20:24 [main] INFO  b.c.a.B.BancoDeSangueApplication - Started BancoDeSangueApplication in 46.033 seconds (process running for 49.372)
+2024-10-23 19:21:46 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-23 19:21:46 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-23 19:21:46 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-10-23 19:21:48 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 786 ms
+2024-10-23 19:21:51 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:21:52 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 302
+2024-10-23 19:22:01 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:22:02 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - RESPONSE: {RR=13, RS=11, DF=12, PR=9, SC=9, SE=22, MA=20, MG=8, SP=14, CE=8, AC=8, MS=10, MT=16, GO=9, AL=10, AM=5, ES=10, AP=9, PA=8, PB=11, PE=13, RJ=10, PI=11, TO=12, RN=10, RO=10, BA=14}
+2024-10-23 19:22:05 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - REQUEST
+2024-10-23 19:22:06 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - RESPONSE: {61 a 70=24.35, 81 a 90=24.95, 31 a 40=25.35, 21 a 30=24.8, 51 a 60=24.25, 41 a 50=24.72, 71 a 80=23.74}
+2024-10-23 19:22:08 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - REQUEST
+2024-10-23 19:22:09 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - RESPONSE: {FEMININO=18.54, MASCULINO=21.85}
+2024-10-23 19:22:11 [http-nio-8080-exec-9] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - REQUEST
+2024-10-23 19:22:12 [http-nio-8080-exec-9] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - RESPONSE: {B+=56.0, A+=53.0, AB+=57.0, B-=55.0, A-=47.0, AB-=54.0, O+=56.0, O-=51.0}
+2024-10-23 19:22:14 [http-nio-8080-exec-10] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:22:14 [http-nio-8080-exec-10] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=156, A+=154, AB+=302, B-=76, A-=77, AB-=147, O+=71, O-=36}
+2024-10-23 19:22:39 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:22:39 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - RESPONSE: {RR=13, RS=11, DF=12, PR=9, SC=9, SE=22, MA=20, MG=8, SP=14, CE=8, AC=8, MS=10, MT=16, GO=9, AL=10, AM=5, ES=10, AP=9, PA=8, PB=11, PE=13, RJ=10, PI=11, TO=12, RN=10, RO=10, BA=14}
+2024-10-23 19:22:52 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - REQUEST
+2024-10-23 19:22:52 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - RESPONSE: {61 a 70=24.35, 81 a 90=24.95, 31 a 40=25.35, 21 a 30=24.8, 51 a 60=24.25, 41 a 50=24.72, 71 a 80=23.74}
+2024-10-23 19:23:01 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - REQUEST
+2024-10-23 19:23:01 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - RESPONSE: {FEMININO=18.54, MASCULINO=21.85}
+2024-10-23 19:23:08 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - REQUEST
+2024-10-23 19:23:09 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - RESPONSE: {B+=56.0, A+=53.0, AB+=57.0, B-=55.0, A-=47.0, AB-=54.0, O+=56.0, O-=51.0}
+2024-10-23 19:23:17 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:23:18 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=156, A+=154, AB+=302, B-=76, A-=77, AB-=147, O+=71, O-=36}
+2024-10-23 19:23:20 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:23:21 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 302
+2024-10-23 19:27:29 [main] INFO  b.c.a.B.BancoDeSangueApplication - Starting BancoDeSangueApplication using Java 21.0.5 with PID 10513 (/home/lucchetta/projects/ApiBancoDeSangue/target/classes started by lucchetta in /home/lucchetta/projects/ApiBancoDeSangue)
+2024-10-23 19:27:29 [main] INFO  b.c.a.B.BancoDeSangueApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-23 19:27:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-23 19:27:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 1 JPA repository interfaces.
+2024-10-23 19:27:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-23 19:27:32 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:27:32 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-23 19:27:32 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-10-23 19:27:32 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 19:27:32 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2905 ms
+2024-10-23 19:27:32 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: entities]
+2024-10-23 19:27:32 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-10-23 19:27:32 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-23 19:27:33 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-23 19:27:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-23 19:27:33 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@398f0516
+2024-10-23 19:27:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-23 19:27:34 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-23 19:27:35 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-23 19:27:35 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:27:36 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-23 19:27:37 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-23 19:27:37 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:27:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-23 19:27:37 [main] INFO  b.c.a.B.BancoDeSangueApplication - Started BancoDeSangueApplication in 9.091 seconds (process running for 10.549)
+2024-10-23 19:27:42 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-23 19:27:42 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-23 19:27:42 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-10-23 19:27:42 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:27:43 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=110, A+=117, AB+=213, B-=59, A-=64, AB-=116, O+=54, O-=30}
+2024-10-23 19:28:32 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:28:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-23 19:28:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-23 19:29:58 [main] INFO  b.c.a.B.BancoDeSangueApplication - Starting BancoDeSangueApplication using Java 21.0.5 with PID 10801 (/home/lucchetta/projects/ApiBancoDeSangue/target/classes started by lucchetta in /home/lucchetta/projects/ApiBancoDeSangue)
+2024-10-23 19:29:58 [main] INFO  b.c.a.B.BancoDeSangueApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-23 19:30:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-23 19:30:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interfaces.
+2024-10-23 19:30:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-23 19:30:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:30:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-23 19:30:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-10-23 19:30:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 19:30:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5186 ms
+2024-10-23 19:30:04 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: entities]
+2024-10-23 19:30:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-10-23 19:30:04 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-23 19:30:06 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-23 19:30:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-23 19:30:07 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b485c8b
+2024-10-23 19:30:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-23 19:30:08 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-23 19:30:11 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-23 19:30:11 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:30:12 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-23 19:30:13 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-23 19:30:13 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:30:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-23 19:30:13 [main] INFO  b.c.a.B.BancoDeSangueApplication - Started BancoDeSangueApplication in 16.328 seconds (process running for 17.885)
+2024-10-23 19:30:28 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-23 19:30:28 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-23 19:30:28 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-10-23 19:30:28 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:30:30 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=110, A+=117, AB+=213, B-=59, A-=64, AB-=116, O+=54, O-=30}
+2024-10-23 19:31:02 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - REQUEST
+2024-10-23 19:31:03 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - RESPONSE: {FEMININO=18.54, MASCULINO=21.85}
+2024-10-23 19:31:05 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - REQUEST
+2024-10-23 19:31:06 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - RESPONSE: {61 a 70=24.35, 81 a 90=24.95, 31 a 40=25.35, 21 a 30=24.8, 51 a 60=24.25, 41 a 50=24.72, 71 a 80=23.74}
+2024-10-23 19:33:12 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:33:12 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 0
+2024-10-23 19:33:16 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:33:16 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - RESPONSE: {}
+2024-10-23 19:33:18 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - REQUEST
+2024-10-23 19:33:18 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - RESPONSE: {}
+2024-10-23 19:33:19 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - REQUEST
+2024-10-23 19:33:19 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - RESPONSE: {FEMININO=0.0, MASCULINO=0.0}
+2024-10-23 19:33:20 [http-nio-8080-exec-9] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - REQUEST
+2024-10-23 19:33:20 [http-nio-8080-exec-9] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - RESPONSE: {B+=0.0, A+=0.0, AB+=0.0, B-=0.0, A-=0.0, AB-=0.0, O+=0.0, O-=0.0}
+2024-10-23 19:33:22 [http-nio-8080-exec-10] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:33:22 [http-nio-8080-exec-10] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=0, A+=0, AB+=0, B-=0, A-=0, AB-=0, O+=0, O-=0}
+2024-10-23 19:33:28 [http-nio-8080-exec-2] INFO  b.c.a.B.e.r.PeopleRegistrationRestController - /pessoas - REQUEST: 300
+2024-10-23 19:33:34 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:33:35 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 300
+2024-10-23 19:33:41 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:33:41 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - RESPONSE: {RR=13, RS=11, DF=12, PR=9, SC=9, SE=22, MA=20, MG=8, SP=12, CE=8, AC=8, MS=10, MT=16, GO=9, AL=10, AM=5, ES=10, AP=9, PA=8, PB=11, PE=13, RJ=10, PI=11, TO=12, RN=10, RO=10, BA=14}
+2024-10-23 19:33:45 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - REQUEST
+2024-10-23 19:33:45 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - RESPONSE: {61 a 70=24.35, 81 a 90=24.95, 31 a 40=25.38, 21 a 30=24.8, 51 a 60=24.25, 41 a 50=24.72, 71 a 80=23.74}
+2024-10-23 19:33:46 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - REQUEST
+2024-10-23 19:33:46 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - RESPONSE: {FEMININO=18.54, MASCULINO=22.15}
+2024-10-23 19:33:47 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - REQUEST
+2024-10-23 19:33:47 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - RESPONSE: {B+=56.0, A+=54.0, AB+=57.0, B-=55.0, A-=47.0, AB-=54.0, O+=56.0, O-=51.0}
+2024-10-23 19:33:49 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:33:49 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=110, A+=115, AB+=211, B-=59, A-=64, AB-=116, O+=54, O-=30}
+2024-10-23 19:34:26 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:34:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-23 19:34:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-23 19:36:37 [main] INFO  b.c.a.B.BancoDeSangueApplication - Starting BancoDeSangueApplication using Java 21.0.5 with PID 11932 (/home/lucchetta/projects/ApiBancoDeSangue/target/classes started by lucchetta in /home/lucchetta/projects/ApiBancoDeSangue)
+2024-10-23 19:36:37 [main] INFO  b.c.a.B.BancoDeSangueApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-23 19:36:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-23 19:36:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interfaces.
+2024-10-23 19:36:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-23 19:36:44 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:36:44 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-23 19:36:44 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-10-23 19:36:44 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 19:36:44 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6546 ms
+2024-10-23 19:36:44 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: entities]
+2024-10-23 19:36:45 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-10-23 19:36:45 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-23 19:36:46 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-23 19:36:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-23 19:36:47 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68479e8b
+2024-10-23 19:36:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-23 19:36:47 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-23 19:36:49 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-23 19:36:49 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:36:50 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-23 19:36:50 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-23 19:36:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:36:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-23 19:36:51 [main] INFO  b.c.a.B.BancoDeSangueApplication - Started BancoDeSangueApplication in 14.281 seconds (process running for 15.701)
+2024-10-23 19:38:12 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-23 19:38:12 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-23 19:38:12 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2024-10-23 19:38:13 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:38:15 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=110, A+=115, AB+=211, B-=59, A-=64, AB-=116, O+=54, O-=30}
+2024-10-23 19:38:18 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:38:19 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - RESPONSE: {RR=13, RS=11, DF=12, PR=9, SC=9, SE=22, MA=20, MG=8, SP=12, CE=8, AC=8, MS=10, MT=16, GO=9, AL=10, AM=5, ES=10, AP=9, PA=8, PB=11, PE=13, RJ=10, PI=11, TO=12, RN=10, RO=10, BA=14}
+2024-10-23 19:39:27 [http-nio-8080-exec-5] INFO  b.c.a.B.e.r.d.r.PersonRegistrationRestController - /pessoa - REQUEST: PersonDto{name='TESTE', cpf='00000000132', rg='485985205', birthdate='10/07/1992', sex='MASCULINO', mother='Lucimara', father='Carlos', email='teste@teste.com', zipcode='14026590', address='Rua Horacio Pessini', number=145, neighborhood='Nova Alianca', city='Ribeirao Preto', state='SP', homePhone='16991699999', cellphone='169916999999', height=1.89, weight=90.1, bloodType='A+'}
+2024-10-23 19:39:27 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:39:28 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 301
+2024-10-23 19:40:31 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:40:31 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 0
+2024-10-23 19:40:39 [http-nio-8080-exec-9] INFO  b.c.a.B.e.r.PeopleRegistrationRestController - /pessoas - REQUEST: 300
+2024-10-23 19:40:45 [http-nio-8080-exec-10] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:40:45 [http-nio-8080-exec-10] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 300
+2024-10-23 19:41:24 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - REQUEST
+2024-10-23 19:41:24 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - RESPONSE: {FEMININO=18.54, MASCULINO=22.15}
+2024-10-23 19:41:25 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - REQUEST
+2024-10-23 19:41:26 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - RESPONSE: {B+=56.0, A+=54.0, AB+=57.0, B-=55.0, A-=47.0, AB-=54.0, O+=56.0, O-=51.0}
+2024-10-23 19:41:27 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - REQUEST
+2024-10-23 19:41:27 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - RESPONSE: {61 a 70=24.35, 81 a 90=24.95, 31 a 40=25.38, 21 a 30=24.8, 51 a 60=24.25, 41 a 50=24.72, 71 a 80=23.74}
+2024-10-23 19:41:31 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:41:31 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=110, A+=115, AB+=211, B-=59, A-=64, AB-=116, O+=54, O-=30}
+2024-10-23 19:43:48 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:43:49 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=110, A+=115, AB+=211, B-=59, A-=64, AB-=116, O+=54, O-=30}
+2024-10-23 19:43:52 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:43:52 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - RESPONSE: {RR=13, RS=11, DF=12, PR=9, SC=9, SE=22, MA=20, MG=8, SP=12, CE=8, AC=8, MS=10, MT=16, GO=9, AL=10, AM=5, ES=10, AP=9, PA=8, PB=11, PE=13, RJ=10, PI=11, TO=12, RN=10, RO=10, BA=14}
+2024-10-23 19:45:02 [http-nio-8080-exec-9] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:45:03 [http-nio-8080-exec-9] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - RESPONSE: {RR=13, RS=11, DF=12, PR=9, SC=9, SE=22, MA=20, MG=8, SP=12, CE=8, AC=8, MS=10, MT=16, GO=9, AL=10, AM=5, ES=10, AP=9, PA=8, PB=11, PE=13, RJ=10, PI=11, TO=12, RN=10, RO=10, BA=14}
+2024-10-23 19:45:03 [http-nio-8080-exec-10] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:45:04 [http-nio-8080-exec-10] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - RESPONSE: {RR=13, RS=11, DF=12, PR=9, SC=9, SE=22, MA=20, MG=8, SP=12, CE=8, AC=8, MS=10, MT=16, GO=9, AL=10, AM=5, ES=10, AP=9, PA=8, PB=11, PE=13, RJ=10, PI=11, TO=12, RN=10, RO=10, BA=14}
+2024-10-23 19:45:11 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - REQUEST
+2024-10-23 19:45:12 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - RESPONSE: {61 a 70=24.35, 81 a 90=24.95, 31 a 40=25.38, 21 a 30=24.8, 51 a 60=24.25, 41 a 50=24.72, 71 a 80=23.74}
+2024-10-23 19:45:53 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:45:53 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 300
+2024-10-23 19:45:56 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:45:56 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 300
+2024-10-23 19:46:50 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:46:51 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 300
+2024-10-23 19:46:52 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:46:53 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - RESPONSE: {RR=13, RS=11, DF=12, PR=9, SC=9, SE=22, MA=20, MG=8, SP=12, CE=8, AC=8, MS=10, MT=16, GO=9, AL=10, AM=5, ES=10, AP=9, PA=8, PB=11, PE=13, RJ=10, PI=11, TO=12, RN=10, RO=10, BA=14}
+2024-10-23 19:46:53 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - REQUEST
+2024-10-23 19:46:54 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - RESPONSE: {61 a 70=24.35, 81 a 90=24.95, 31 a 40=25.38, 21 a 30=24.8, 51 a 60=24.25, 41 a 50=24.72, 71 a 80=23.74}
+2024-10-23 19:46:54 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - REQUEST
+2024-10-23 19:46:55 [http-nio-8080-exec-7] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - RESPONSE: {FEMININO=18.54, MASCULINO=22.15}
+2024-10-23 19:46:55 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - REQUEST
+2024-10-23 19:46:55 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - RESPONSE: {B+=56.0, A+=54.0, AB+=57.0, B-=55.0, A-=47.0, AB-=54.0, O+=56.0, O-=51.0}
+2024-10-23 19:46:56 [http-nio-8080-exec-9] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:46:56 [http-nio-8080-exec-9] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=110, A+=115, AB+=211, B-=59, A-=64, AB-=116, O+=54, O-=30}
+2024-10-23 19:46:59 [http-nio-8080-exec-10] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - REQUEST
+2024-10-23 19:47:00 [http-nio-8080-exec-10] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - RESPONSE: {B+=56.0, A+=54.0, AB+=57.0, B-=55.0, A-=47.0, AB-=54.0, O+=56.0, O-=51.0}
+2024-10-23 19:47:00 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - REQUEST
+2024-10-23 19:47:00 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - RESPONSE: {FEMININO=18.54, MASCULINO=22.15}
+2024-10-23 19:47:00 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - REQUEST
+2024-10-23 19:47:00 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - RESPONSE: {61 a 70=24.35, 81 a 90=24.95, 31 a 40=25.38, 21 a 30=24.8, 51 a 60=24.25, 41 a 50=24.72, 71 a 80=23.74}
+2024-10-23 19:47:00 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - REQUEST
+2024-10-23 19:47:01 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - RESPONSE: {B+=56.0, A+=54.0, AB+=57.0, B-=55.0, A-=47.0, AB-=54.0, O+=56.0, O-=51.0}
+2024-10-23 19:47:01 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:47:01 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=110, A+=115, AB+=211, B-=59, A-=64, AB-=116, O+=54, O-=30}
