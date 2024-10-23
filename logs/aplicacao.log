@@ -1,0 +1,215 @@
+2024-10-23 19:00:01 [main] INFO  b.c.a.B.BancoDeSangueApplication - Starting BancoDeSangueApplication using Java 21.0.5 with PID 6353 (/home/lucchetta/projects/ApiBancoDeSangue/target/classes started by lucchetta in /home/lucchetta/projects/ApiBancoDeSangue)
+2024-10-23 19:00:01 [main] INFO  b.c.a.B.BancoDeSangueApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-23 19:00:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-23 19:00:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 1 JPA repository interfaces.
+2024-10-23 19:00:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-23 19:00:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:00:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-23 19:00:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-10-23 19:00:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 19:00:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2873 ms
+2024-10-23 19:00:05 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: entities]
+2024-10-23 19:00:05 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-10-23 19:00:05 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-23 19:00:05 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-23 19:00:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-23 19:00:06 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ca33187
+2024-10-23 19:00:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-23 19:00:06 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-23 19:00:08 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-23 19:00:08 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:00:08 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-23 19:00:09 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-23 19:00:09 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:00:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-23 19:00:09 [main] INFO  b.c.a.B.BancoDeSangueApplication - Started BancoDeSangueApplication in 8.856 seconds (process running for 11.044)
+2024-10-23 19:00:19 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-23 19:00:19 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-23 19:00:19 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-10-23 19:00:22 [http-nio-8080-exec-5] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 989 ms
+2024-10-23 19:00:52 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:00:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-23 19:00:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-23 19:05:48 [main] INFO  b.c.a.B.BancoDeSangueApplication - Starting BancoDeSangueApplication using Java 21.0.5 with PID 6920 (/home/lucchetta/projects/ApiBancoDeSangue/target/classes started by lucchetta in /home/lucchetta/projects/ApiBancoDeSangue)
+2024-10-23 19:05:48 [main] INFO  b.c.a.B.BancoDeSangueApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-23 19:05:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-23 19:05:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interfaces.
+2024-10-23 19:05:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-23 19:05:52 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:05:52 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-23 19:05:52 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-10-23 19:05:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 19:05:52 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3244 ms
+2024-10-23 19:05:52 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: entities]
+2024-10-23 19:05:52 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-10-23 19:05:52 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-23 19:05:53 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-23 19:05:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-23 19:05:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ae6d078
+2024-10-23 19:05:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-23 19:05:53 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-23 19:05:55 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-23 19:05:55 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:05:56 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-23 19:05:56 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-23 19:05:56 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:05:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-23 19:05:57 [main] INFO  b.c.a.B.BancoDeSangueApplication - Started BancoDeSangueApplication in 9.465 seconds (process running for 11.445)
+2024-10-23 19:06:14 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-23 19:06:14 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-23 19:06:14 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-10-23 19:06:14 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:06:16 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 302
+2024-10-23 19:06:31 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:06:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-23 19:06:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-23 19:08:05 [main] INFO  b.c.a.B.BancoDeSangueApplication - Starting BancoDeSangueApplication using Java 21.0.5 with PID 7316 (/home/lucchetta/projects/ApiBancoDeSangue/target/classes started by lucchetta in /home/lucchetta/projects/ApiBancoDeSangue)
+2024-10-23 19:08:05 [main] INFO  b.c.a.B.BancoDeSangueApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-23 19:08:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-23 19:08:07 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 107 ms. Found 1 JPA repository interfaces.
+2024-10-23 19:08:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-23 19:08:09 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:08:09 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-23 19:08:09 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-10-23 19:08:09 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 19:08:09 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4408 ms
+2024-10-23 19:08:10 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: entities]
+2024-10-23 19:08:10 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-10-23 19:08:10 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-23 19:08:11 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-23 19:08:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-23 19:08:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@76fc5687
+2024-10-23 19:08:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-23 19:08:12 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-23 19:08:13 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-23 19:08:13 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:08:14 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-23 19:08:16 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-23 19:08:16 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:08:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-23 19:08:16 [main] INFO  b.c.a.B.BancoDeSangueApplication - Started BancoDeSangueApplication in 12.645 seconds (process running for 14.199)
+2024-10-23 19:08:21 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-23 19:08:21 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-23 19:08:21 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-10-23 19:08:21 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - REQUEST
+2024-10-23 19:08:23 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - RESPONSE: {B+=56.0, A+=53.0, AB+=57.0, B-=55.0, A-=47.0, AB-=54.0, O+=56.0, O-=51.0}
+2024-10-23 19:09:07 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:09:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-23 19:09:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-23 19:13:22 [main] INFO  b.c.a.B.BancoDeSangueApplication - Starting BancoDeSangueApplication using Java 21.0.5 with PID 7771 (/home/lucchetta/projects/ApiBancoDeSangue/target/classes started by lucchetta in /home/lucchetta/projects/ApiBancoDeSangue)
+2024-10-23 19:13:22 [main] INFO  b.c.a.B.BancoDeSangueApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-23 19:13:24 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-23 19:13:24 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 1 JPA repository interfaces.
+2024-10-23 19:13:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-23 19:13:27 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:13:27 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-23 19:13:27 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-10-23 19:13:27 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 19:13:27 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4539 ms
+2024-10-23 19:13:27 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: entities]
+2024-10-23 19:13:28 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-10-23 19:13:28 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-23 19:13:28 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-23 19:13:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-23 19:13:29 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a7db5a
+2024-10-23 19:13:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-23 19:13:30 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-23 19:13:32 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-23 19:13:32 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:13:33 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-23 19:13:34 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-23 19:13:34 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:13:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-23 19:13:34 [main] INFO  b.c.a.B.BancoDeSangueApplication - Started BancoDeSangueApplication in 13.981 seconds (process running for 15.682)
+2024-10-23 19:13:42 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-23 19:13:42 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-23 19:13:42 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2024-10-23 19:13:43 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetReceptorsByDonatorsRestController - /quantidade/receptores/tiposanguineo/doador - REQUEST
+2024-10-23 19:13:44 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetReceptorsByDonatorsRestController - /quantidade/receptores/tiposanguineo/doador - RESPONSE: {B+=78, A+=75, AB+=33, B-=148, A-=146, AB-=63, O+=155, O-=302}
+2024-10-23 19:13:49 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - REQUEST
+2024-10-23 19:13:50 [http-nio-8080-exec-2] INFO  b.c.a.B.e.g.GetDonatorsByReceptorsRestController - /quantidade/doadores/tiposanguineo/receptor - RESPONSE: {B+=156, A+=154, AB+=302, B-=76, A-=77, AB-=147, O+=71, O-=36}
+2024-10-23 19:13:54 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:13:55 [http-nio-8080-exec-3] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - RESPONSE: {RR=13, RS=11, DF=12, PR=9, SC=9, SE=22, MA=20, MG=8, SP=14, CE=8, AC=8, MS=10, MT=16, GO=9, AL=10, AM=5, ES=10, AP=9, PA=8, PB=11, PE=13, RJ=10, PI=11, TO=12, RN=10, RO=10, BA=14}
+2024-10-23 19:14:00 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - REQUEST
+2024-10-23 19:14:00 [http-nio-8080-exec-5] INFO  b.c.a.B.e.g.GetObesityPercentagePerSexRestController - /percentual/obesos/sexo - RESPONSE: {FEMININO=18.54, MASCULINO=21.85}
+2024-10-23 19:14:08 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - REQUEST
+2024-10-23 19:14:09 [http-nio-8080-exec-4] INFO  b.c.a.B.e.g.GetAvarageBMIPerDecadeRestController - /media/imc/decada - RESPONSE: {61 a 70=24.35, 81 a 90=24.95, 31 a 40=25.35, 21 a 30=24.8, 51 a 60=24.25, 41 a 50=24.72, 71 a 80=23.74}
+2024-10-23 19:14:13 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - REQUEST
+2024-10-23 19:14:14 [http-nio-8080-exec-6] INFO  b.c.a.B.e.g.GetAvarageAgePerBloodTypeRestController - /media/idade/tiposanguineo - RESPONSE: {B+=56.0, A+=53.0, AB+=57.0, B-=55.0, A-=47.0, AB-=54.0, O+=56.0, O-=51.0}
+2024-10-23 19:14:19 [http-nio-8080-exec-7] INFO  b.c.a.B.e.r.PeopleRegistrationRestController - /pessoas - REQUEST: 1
+2024-10-23 19:14:19 [http-nio-8080-exec-7] INFO  b.c.a.B.d.BancoDeSangueRepositoryImplement - CPF ja registrado: 00011122233
+2024-10-23 19:14:19 [http-nio-8080-exec-7] WARN  b.c.a.B.d.BancoDeSangueRepositoryImplement - Impossivel registrar pessoa
+2024-10-23 19:14:19 [http-nio-8080-exec-7] WARN  b.c.a.B.c.u.r.i.PeopleRegistrationUseCaseImpl - IMPOSSIVEL REGISTRAR PESSOA: NAO FOI POSSIVEL REGISTRAR: Person{name='Juca Bala', cpf='000.111.222-33', rg='001112223', birthdate='1992-07-10', sex=MALE, mother='Bia Bala', father='Paulo Bala', email='jucabala@gmail.com', address=Address{zipcode='00111-222', address='Rua dos pilares', number=135, neighborhood='Jardim das couves', city='Araraquara', state='SP'}, homePhone='11 35874545', cellphone='11 988571245', height=1.8, weight=80.2, bloodType=A_POSITIVE}
+2024-10-23 19:14:35 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:14:35 [http-nio-8080-exec-8] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 302
+2024-10-23 19:14:49 [http-nio-8080-exec-9] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - REQUEST
+2024-10-23 19:14:50 [http-nio-8080-exec-9] INFO  b.c.a.B.e.g.GetAllPeopleRestController - /pessoas - RESPONSE: 302
+2024-10-23 19:15:15 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:15:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-23 19:15:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-23 19:17:08 [main] INFO  b.c.a.B.BancoDeSangueApplication - Starting BancoDeSangueApplication using Java 21.0.5 with PID 8191 (/home/lucchetta/projects/ApiBancoDeSangue/target/classes started by lucchetta in /home/lucchetta/projects/ApiBancoDeSangue)
+2024-10-23 19:17:08 [main] INFO  b.c.a.B.BancoDeSangueApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-23 19:17:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-23 19:17:10 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 1 JPA repository interfaces.
+2024-10-23 19:17:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-23 19:17:11 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:17:11 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-23 19:17:11 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-10-23 19:17:11 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 19:17:11 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2960 ms
+2024-10-23 19:17:12 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: entities]
+2024-10-23 19:17:12 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-10-23 19:17:12 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-23 19:17:12 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-23 19:17:12 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-23 19:17:13 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@749ad37c
+2024-10-23 19:17:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-23 19:17:13 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-23 19:17:14 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-23 19:17:14 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:17:16 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-23 19:17:16 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-23 19:17:16 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:17:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-23 19:17:16 [main] INFO  b.c.a.B.BancoDeSangueApplication - Started BancoDeSangueApplication in 9.235 seconds (process running for 10.628)
+2024-10-23 19:17:23 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-23 19:17:23 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-23 19:17:23 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2024-10-23 19:17:23 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:17:23 [http-nio-8080-exec-1] ERROR b.c.a.B.c.e.GlobalExceptionHandler - TESTE
+2024-10-23 19:17:48 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:17:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-23 19:17:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-23 19:18:19 [main] INFO  b.c.a.B.BancoDeSangueApplication - Starting BancoDeSangueApplication using Java 21.0.5 with PID 8351 (/home/lucchetta/projects/ApiBancoDeSangue/target/classes started by lucchetta in /home/lucchetta/projects/ApiBancoDeSangue)
+2024-10-23 19:18:19 [main] INFO  b.c.a.B.BancoDeSangueApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-23 19:18:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-23 19:18:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interfaces.
+2024-10-23 19:18:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-23 19:18:22 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:18:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-23 19:18:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-10-23 19:18:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-23 19:18:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3186 ms
+2024-10-23 19:18:23 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: entities]
+2024-10-23 19:18:23 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-10-23 19:18:23 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2024-10-23 19:18:24 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-23 19:18:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-23 19:18:24 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59b98ad1
+2024-10-23 19:18:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-23 19:18:24 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-23 19:18:26 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-23 19:18:26 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:18:28 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-23 19:18:29 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-23 19:18:29 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-10-23 19:18:29 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-10-23 19:18:29 [main] INFO  b.c.a.B.BancoDeSangueApplication - Started BancoDeSangueApplication in 10.918 seconds (process running for 12.454)
+2024-10-23 19:18:32 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-23 19:18:32 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-23 19:18:32 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-10-23 19:18:32 [http-nio-8080-exec-1] INFO  b.c.a.B.e.g.GetPeoplePerStateRestController - /pessoas/estados - REQUEST
+2024-10-23 19:18:32 [http-nio-8080-exec-1] ERROR b.c.a.B.c.e.GlobalExceptionHandler - ExceptionEntity{code=500, message='TESTE'}
+2024-10-23 19:18:42 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'entities'
+2024-10-23 19:18:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-23 19:18:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

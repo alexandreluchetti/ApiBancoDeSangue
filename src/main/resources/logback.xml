@@ -1,0 +1,42 @@
+<configuration>
+
+    <!-- Appender para log no console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Appender para gravar log em arquivo -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/aplicacao.log</file> <!-- Caminho para o log na raiz do projeto -->
+        <append>true</append> <!-- Adicionar logs ao final do arquivo existente -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Appender com rotação diária dos logs -->
+    <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/aplicacao-rotacionado.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Gera um novo arquivo de log a cada dia -->
+            <fileNamePattern>logs/aplicacao-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Mantém arquivos de log por até 30 dias -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Configuração do nível de log -->
+    <root level="info">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="ROLLING_FILE" />
+    </root>
+
+</configuration>

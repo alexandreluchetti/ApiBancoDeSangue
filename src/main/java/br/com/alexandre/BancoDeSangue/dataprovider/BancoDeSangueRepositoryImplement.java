@@ -5,10 +5,14 @@ import br.com.alexandre.BancoDeSangue.configuration.exceptions.PersonException;
 import br.com.alexandre.BancoDeSangue.core.entities.Person;
 import br.com.alexandre.BancoDeSangue.dataprovider.entity.PersonEntity;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class BancoDeSangueRepositoryImplement {
+
+    private static final Logger logger = LoggerFactory.getLogger(BancoDeSangueRepositoryImplement.class);
 
     private final BancoDeSangueRepository repository;
 
@@ -21,6 +25,7 @@ public class BancoDeSangueRepositoryImplement {
         try {
             return this.repository.getPeople(null).stream().map(PersonEntity::toObject).toList();
         } catch (Exception exception) {
+            logger.warn("Nenhuma pessoa encontrada");
             throw EmptyListException.noPersonFound();
         }
     }
@@ -29,11 +34,13 @@ public class BancoDeSangueRepositoryImplement {
         try {
             String cpf = person.getCleanCpf();
             if (isAlreadyRegistered(cpf)) {
+                logger.info("CPF ja registrado: {}", person.getCleanCpf());
                 throw PersonException.cpfAlreadyRegistered(cpf);
             } else {
                 registerPerson(person);
             }
         } catch (Exception exception) {
+            logger.warn("Impossivel registrar pessoa");
             throw PersonException.impossibleToRegister(person);
         }
     }

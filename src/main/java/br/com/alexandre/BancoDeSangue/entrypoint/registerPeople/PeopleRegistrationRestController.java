@@ -6,6 +6,8 @@ import br.com.alexandre.BancoDeSangue.configuration.exceptions.EmptyListExceptio
 import br.com.alexandre.BancoDeSangue.core.useCase.registerPeople.PeopleRegistrationUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,19 +22,23 @@ import java.util.List;
 @RequestMapping(value = "/v1/bancodesangue", produces = MediaType.APPLICATION_JSON_VALUE)
 public class PeopleRegistrationRestController {
 
+    private static final String PEOPLE_PATH = "/pessoas";
+    private static final Logger logger = LoggerFactory.getLogger(PeopleRegistrationRestController.class);
+
     private final PeopleRegistrationUseCase useCase;
 
     public PeopleRegistrationRestController(PeopleRegistrationUseCase useCase) {
         this.useCase = useCase;
     }
 
-    @PostMapping(path = "/pessoas")///envia/pessoas
+    @PostMapping(path = PEOPLE_PATH)///envia/pessoas
     @Operation(summary = "Operacao para enviar uma lista de pessoas para o banco de dados")
     public ResponseEntity<List<PersonDto>> registerPeople(@RequestBody List<PersonDto> personDtos) {
         if (personDtos == null || personDtos.isEmpty()) {
             throw EmptyListException.noPersonAdded();
         }
 
+        logger.info(PEOPLE_PATH + " - REQUEST: " + personDtos.size());
         return ResponseEntity.ok(
                 useCase.peopleRegistration(
                         personDtos.stream().map(PersonDto::toPerson).toList()
