@@ -1,3 +1,6 @@
+server:
+  port: 8303
+
 spring:
   jpa:
     properties:
@@ -5,7 +8,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
 
 database:
-  jdbcUrl: jdbc:mysql://localhost:3306/banco_de_sangue
+  jdbcUrl: jdbc:mysql://mysql:3306/banco_de_sangue
   username: root
-  password: Erdaxel10792!
+  password: root
   driver-class-name: com.mysql.cj.jdbc.Driver

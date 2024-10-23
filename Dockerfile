@@ -7,4 +7,4 @@ ENV PATH ${MAVEN_HOME}/bin:${PATH}
 ENV TZ=America/Sao_Paulo
 RUN apt-get update && apt-get install -y openjdk-21-jdk maven
 RUN mvn clean package
-CMD ["java", "-jar", "target/BancoDeSangue-1.0.0.jar"]
+CMD ["java", "-jar", "target/BancoDeSangue-1.0.1.jar"]

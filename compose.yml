@@ -19,9 +19,9 @@ services:
     restart: on-failure
     depends_on:
       - mysql
-    image: 'alexandreluchetti/api-banco-de-sangue:1.0.0'
+    image: 'alexandreluchetti/api-banco-de-sangue:latest'
     ports:
-      - '8080:8080'
+      - '8303:8303'
     volumes:
       - /opt/api-banco-de-sangue:/opt/lib/api-banco-de-sangue
     environment:
@@ -38,7 +38,7 @@ services:
     depends_on:
       - mysql
       - api-banco-de-sangue
-    image: 'alexandreluchetti/angular-banco-de-sangue:1.0.0'
+    image: 'alexandreluchetti/angular-banco-de-sangue:latest'
     ports:
       - '4200:4200'
     volumes:
