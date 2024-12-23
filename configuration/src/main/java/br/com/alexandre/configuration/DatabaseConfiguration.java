@@ -28,7 +28,7 @@ public class DatabaseConfiguration {
 
     @Primary
     @Bean(name = "dataSource")
-    @ConfigurationProperties(prefix = "database")
+    @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
         return DataSourceBuilder.create().build();
     }
